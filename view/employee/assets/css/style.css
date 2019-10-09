@@ -1,0 +1,147 @@
+/*
+* main application js
+* 
+* author: Jonathan <jonathanamparo2@live.com>
+*
+*/
+
+* {
+	font-family: 'Raleway', sans-serif;
+}
+
+.container {
+/*	width: 100%;*/
+/*	margin-left: 0%;
+	margin-right: 0%;*/
+}
+
+.navy-blue {
+	color: #29558b; /* Navy Blue */
+}
+
+.bold-navy-blue {
+	color: #29558b; /* Navy blue*/
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+.bold-navy-black {
+	color: black; /* Navy blue*/
+	font-weight: 600;
+}
+
+.text-black {
+	color: black;
+}
+
+.bg-navy-blue {
+	background-color: #29558b; /* Background Navy Blue */
+}
+
+.bg-gray1 {
+	background-color: #f5f5f5; /* Background Gray */
+}
+
+.nav-border-gray {
+	border-color: #8C8C8C; /*  Gray */
+	border: 1px solid;
+	border-top: 0!important;
+	border-right: 0!important;
+	border-left: 0!important;
+}
+
+#collapsibleNavbar a {
+	color: rgb(0, 0, 0); /* Black */
+	font-weight: 700;
+}
+
+#collapsibleNavbar a:hover {
+	color: #29558b; /* Navy Blue */
+	font-weight: 700;
+}
+
+#collapsibleNavbar .nav-link.active {
+	color: #29558b; /* Navy Blue */
+	font-weight: 700;
+}
+
+#navTabs a {
+	color: rgb(0, 0, 0); /* black */
+	font-weight: 700;
+}
+
+#navTabs a:hover {
+	color: #29558b; /* Navy blue*/
+	font-weight: 700;
+}
+
+#navTabs .nav-link.active {
+	color: #29558b; /* Navy blue*/
+	font-weight: 700;
+}
+
+.nav-tabs > li, .nav-pills > li {
+	float:none;
+	display:inline-block;
+}
+
+.nav-tabs, .nav-pills {
+	text-align:center;
+}
+
+.ml-15 {
+	margin-left: ($spacer * 9) !important;
+}
+
+#welcome a, #goal a, #history a{
+	color: rgb(0, 0, 0);
+	font-weight: 700;
+}
+
+.px-0 {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+#topFooter  {
+	background-color: #f5f5f5; /* Gray */
+	height: 115px;
+}
+
+footer p, footer span {
+	text-align: center;
+	font-size: 12px;
+}
+
+footer a {
+	color: #29558b; /* Navy blue*/
+}
+
+footer a:hover {
+	color: #29558b; /* Navy blue*/
+	font-weight: 700;
+}
+
+a.btn {
+	color: white;
+	background-color: #29558b; /* Navy Blue */
+	border-color: #29558b;
+}
+
+a.btn:hover {
+	color: white;
+	background-color: #0a2e5b; /* Navy Blue */
+	border-color: #29558b;
+}
+
+a p:hover {
+	color: #29558b;
+	font-weight: 700;
+}
+
+#map {
+	width: 400px;
+	height: 400px;
+}
+
+/* ---------------------------------TESTING WITH BELOW ------------------------------*/
