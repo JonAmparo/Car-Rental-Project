@@ -30,7 +30,7 @@
 </head>
 
 <?php 
-include('headerEdit.php');
+include('includes/header.php');
 ?>
 
 <body class="container-fluid" style="margin-left: 10px; margin-bottom: 10px;">

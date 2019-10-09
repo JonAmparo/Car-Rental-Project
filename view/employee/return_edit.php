@@ -28,7 +28,7 @@
 </head>
 
 <?php 
-include('headerEdit.php');
+include('includes/header.php');
 ?>
 
 <body class="container-fluid" style="margin-bottom: 20px;">

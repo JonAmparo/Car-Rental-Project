@@ -4,7 +4,12 @@ include('includes/header.php');
 
 <!-- Carousel -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner" style="width: 100%;">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
         <div class="carousel-item active">
             <img class="d-block w-100" src="assets/images/car1.jpg" alt="First slide">
         </div>
@@ -12,11 +17,11 @@ include('includes/header.php');
             <img class="d-block w-100" src="assets/images/car2.jpg" alt="Second slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="assets/images/car8.jpg" alt="Third slide">
+            <img class="d-block w-100" src="assets/images/car7.jpg" alt="Third slide">
         </div>
     </div>
-    <!-- End Carousel -->
 </div>
+<!-- End Carousel -->
 
 <!-- Toggleable Tabs -->
 <div id="aboutUs" class="container" style="background-color: white; margin-bottom: 100px;">
@@ -101,3 +106,6 @@ include('includes/header.php');
     </div>
     <!-- End of toggle Tabs -->
 </div>
+
+
+<?php include('includes/footer.php'); ?>

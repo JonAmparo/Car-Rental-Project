@@ -25,7 +25,7 @@
 
 
 <?php 
-include('header.php');
+include('includes/header.php');
 ?>
 <body class="container-fluid">
     <div id="wrapper">

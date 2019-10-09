@@ -32,7 +32,7 @@ if(isset($_SESSION['error'] )) { ?>
 
     </head>
 
-    <?php include('header.php'); ?>
+    <?php include('includes/header.php'); ?>
     
     <body class="container-fluid">
         <div id="wrapper">

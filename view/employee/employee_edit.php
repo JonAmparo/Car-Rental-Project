@@ -29,7 +29,7 @@ $lastname = implode(" ", $fullname);
 </head>
 
 <?php 
-include('headerEdit.php');
+include('includes/header.php');
 ?>
 
 <body class="container-fluid">

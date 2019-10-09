@@ -1,9 +1,8 @@
 <?php 
 
 class CarController {
-
 	private $db;
-
+	
 	function __construct()	{
 		$this->db = new DB_Manager();
 	}
