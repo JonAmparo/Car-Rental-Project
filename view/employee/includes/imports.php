@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Employee test Dashboard</title>
-
-    <!-- Style Sheet -->
-    <link href="view/employee/assets/css/style.css" rel="stylesheet">
-
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,600i,700" rel="stylesheet">
 
@@ -23,7 +11,6 @@
     </script>
 
     <!-- AJAX -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- including boostrap from cdn -->
@@ -37,8 +24,3 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
         integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous">
     </script>
-
-    <!-- icon -->
-    <link rel="icon" type="image/png" href="view/employee/assets/images/icon.png">
-
-</head>

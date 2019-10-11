@@ -7,9 +7,7 @@ class CarController {
 		$this->db = new DB_Manager();
 	}
 
-
 	public function addCar() {
-
 		if(isset($_POST['addCar'])){
 
 			if (isset( $_POST['brand'])) {
@@ -76,7 +74,7 @@ class CarController {
 				if(!in_array($ext, $allowed_extensions)){
 					$_SESSION['error'] = "Only image can be uploaded!";
 				}
-							//check for server error
+				//check for server error
 				if($_FILES['image']['error'] == 0){
 					$destination = $path . $extArray[0] ."_" . time() . "." . $ext;
 				}					        
@@ -84,19 +82,15 @@ class CarController {
 
 			if(!empty($destination) && strlen($destination)>0)
 				move_uploaded_file($_FILES['image']['tmp_name'], $destination);
-
 			$description="";
 
 			if (isset( $_POST['description'])) {
 				$description=($_POST['description']);
-
 			}
 
 			if (isset( $_POST['status']) && $_POST['status']>0) {
 				$status=($_POST['status']);
-
-			}
-			else {
+			} else {
 				$_SESSION['error'] =  "Rent price can't be empty.";
 			}
 
@@ -115,18 +109,12 @@ class CarController {
 					"description"=>$description,
 					"status"=>$status
 				);
-
 				$car=new Car($car_array);
-
-
 				$this->db->add_Car($car);
 			}
-
 		}
-
 		$cars=$this->db->display_All_Cars();
-
-		require_once "view/employee/car_dashboard.php";
+		require_once "view/employee/car_add.php";
 	}
 
 	public function getSingleCar(){

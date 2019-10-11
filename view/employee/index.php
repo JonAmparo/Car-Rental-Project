@@ -17,10 +17,8 @@ alert("<?php echo  ($_SESSION['error'] )?>");
         $user=$_SESSION["logged"];
     }
     ?>
+<?php include('includes/headIndex.php'); ?>
 
-
-<?php include('includes/head.php'); ?>
-<?php include('includes/header.php'); ?>
 
 <div class="container-fluid pb-5">
     <div id="wrapper">

@@ -1,41 +1,4 @@
-<?php 
-if(isset($_SESSION['error'] )) { ?>
-<script>
-alert("<?php echo  ($_SESSION['error'] )?>");
-</script>
-<?php unset($_SESSION['error']) ;} 
-    ?>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <base href="http://localhost:8080/PHPPROJMASTER/view/employee/">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Employee - Reservation Dashboard</title>
-
-    <!-- Style Sheet -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,600i,700" rel="stylesheet">
-    <!-- including boostrap from cdn -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Font Awesome  -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
-        integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous">
-    </script>
-    <!-- icon -->
-    <link rel="icon" type="image/png" href="../assets/images/icon.png">
-
-
-</head>
+<?php include('includes/head.php'); ?>
 <?php include('includes/header.php'); ?>
 
 <body class="container-fluid">

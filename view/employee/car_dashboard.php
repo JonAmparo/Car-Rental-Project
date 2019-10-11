@@ -1,12 +1,3 @@
-<?php 
-if(isset($_SESSION['error'] )) { ?>
-<script>
-alert("<?php echo  ($_SESSION['error'] )?>");
-</script>
-<?php unset($_SESSION['error']) ;} 
-
-    ?>
-
 <?php include('includes/head.php'); ?>
 <?php include('includes/header.php'); ?>
 
@@ -27,7 +18,7 @@ alert("<?php echo  ($_SESSION['error'] )?>");
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <a href="view/employee/car_add.php" class="btn btn-success pull-right">Add Car</a>
+                            <a href="?controller=car&action=addCar" class="btn btn-success pull-right">Add Car</a>
                         </div>
                         <div class="panel-body">
                             <div class="row">
