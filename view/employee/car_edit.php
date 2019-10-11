@@ -1,10 +1,7 @@
 <?php include('includes/head.php'); ?>
 <?php include('includes/header.php'); ?>
 
-
-
 <div class="container-fluid">
-
     <div id="wrapper">
         <div id="ptype-wrapper">
             <div class="row">
@@ -19,7 +16,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <form role="form" id="EditCar" name="EditCar"
-                                        action="../../index.php/?controller=car&action=editCar" method="POST"
+                                        action="?controller=car&action=editCar" method="POST"
                                         enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>ID</label>
@@ -119,8 +116,6 @@ $(function() {
             numberofPassenger = $("input[name='numberofPassenger']"),
             status = $("input[name='status']"),
             rentPrice = $("input[name='rentPrice']");
-
-
         $(this).find(".error").remove();
 
 
@@ -159,7 +154,7 @@ $(function() {
         }
 
 
-        if (tankCapacity.val() < 1 || tankCapacity.val() > 25) {
+        if (tankCapacity.val() < 1) {
             validated = false;
             tankCapacity.css("border-color", "red");
             tankCapacity.parent().append(
@@ -214,6 +209,16 @@ $(function() {
             rentPrice.parent().find(".error").remove();
         }
 
+        if (document.getElementById("image").files.length == 0) {
+            validated = false;
+            $('#image').css("border-color", "red");
+            $('#image').parent().append("<span class='error'>File is not chosen.</span>");
+            $(".error").fadeIn(500);
+        } else {
+            image.css("border-color", "green");
+            image.parent().find(".error").remove();
+        }
+
         if (status.val().length < 1) {
             validated = false;
             status.css("border-color", "red");
@@ -223,9 +228,6 @@ $(function() {
             status.css("border-color", "green");
             status.parent().find(".error").remove();
         }
-
-
-
 
         if (validated) {
             msg = "Your information:\n";
@@ -250,10 +252,10 @@ $(function() {
         return false;
     })
 
-    $("#AddCar").on('reset', function(e) {
-        /*location.reload();*/
-        /*                $(this).find(".error").remove();
-         */
+    $("#EditCar").on('reset', function(e) {
+        location.reload();
+        $(this).find(".error").remove();
+
         model = $("input[name='model']"),
             brand = $("input[name='brand']"),
             type = $("input[name='type']"),
@@ -262,11 +264,7 @@ $(function() {
             color = $("input[name='color']"),
             numberofPassenger = $("input[name='numberofPassenger']"),
             status = $("input[name='status']"),
-
             rentPrice = $("input[name='rentPrice']");
-
-
-
 
 
         brand.css("border-color", "inherit");
@@ -295,9 +293,6 @@ $(function() {
 
         status.css("border-color", "inherit");
         status.parent().find(".error").remove();
-
-
-
     });
 });
 </script>

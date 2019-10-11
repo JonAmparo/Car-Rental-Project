@@ -5,7 +5,7 @@
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <div class="row">
-                    <div class="col-md-9">
+                    <div class="col-xs-9 text-right">
                         <h4><strong>
                             <div>Total Clients:<span style="color:green;"> <?= $dashboard->getTotalClient() ?></span></div>
                         </strong></h4>

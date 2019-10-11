@@ -17,7 +17,8 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
 
-                            <a href="view/employee/customer_add.php" class="btn btn-success pull-right">Add Customer</a>
+                            <a href="?controller=user&action=addNewCustomer" class="btn btn-success pull-right">Add
+                                Customer</a>
                         </div>
 
                         <div class="panel-body">

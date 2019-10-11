@@ -16,13 +16,14 @@ class IndexController {
 			$activeEmployee=$this->db->get_Single_Emplyee($logged_user->getUserName());
 			$level= $logged_user->getLevel();
 
-			if (($level ==1 || $level ==2) && ($activeEmployee!=null && $activeEmployee->getStatus()==1)){
+			if (($level === 1 || $level === 2) && ($activeEmployee !== null && $activeEmployee->getStatus() === 1)){
 				$cars=$this->db->display_All_Cars();
 				$_SESSION['cars']=$cars;
 				$_SESSION['dashboard']=$this->db->getDashboard();
 
-				header("Location: view/employee/index.php");
-			} else if ($level ==3) {
+				require_once 'view/employee/index.php';
+				// header("Location: view/employee/index.php");
+			} else if ($level === 3) {
 				require_once 'view/customers/index.php';
 			}
 		}
@@ -33,13 +34,14 @@ class IndexController {
 		if (isset($_SESSION['error']) ) {
 			$error_message=$_SESSION['error'];
 		}
-		require_once 'view/customers/index.php';
+		// require_once 'view/customers/index.php';
 	}
 
 	public function displayCarDashboard(){
 		$cars=$this->db->display_All_Cars();
 		$_SESSION['cars']=$cars;
-		header("Location: view/employee/index.php");
+		require_once 'view/employee/index.php';
+		// header("Location: view/employee/index.php");
 	}
 
 	public function faq(){

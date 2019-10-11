@@ -14,19 +14,19 @@ class ReportController {
 
 	public function getAllInvoices(){
 		$allInvoices = $this->db->display_All_Invoices(); 		
-		require_once("view/employee/invoice_dashboard.php");
+		require_once 'view/employee/invoice_dashboard.php';
 	}
 	
 	public function getSingleInvoice(){			 
 		if(isset ($_GET['id'])){		
 			$invoice = $this->db->getSingleInvoice($_GET['id']); 		
-			require_once("view/employee/invoice_final.php");
+			require_once 'view/employee/invoice_final.php';
 		}				
 	}
 
 	public function display_All_returns(){
 		$allReturns = $this->db->display_All_returns(); 		
-		require_once("view/employee/return_dashboard.php");
+		require_once 'view/employee/return_dashboard.php';
 	}
 
 	public function getCarHistory() {
@@ -35,7 +35,7 @@ class ReportController {
 				$rentals=$this->db->getRentingCarHistory($_GET['id']);
 				$allReservations=$this->db->getReservationCarHistory($_GET['id']);
 			}
-			require_once("view/employee/car_history.php");
+			require_once 'view/employee/car_history.php';
 		}
 	}
 
@@ -45,7 +45,7 @@ class ReportController {
 				$clientRentals=$this->db->getClientRentingHistory($_GET['id']);
 				$clientReservation=$this->db->getReservationCustoHistory($_GET['id']);
 			}
-			require_once("view/employee/customer_history.php");
+			require_once 'view/employee/customer_history.php';
 		}
 	}
 
@@ -93,7 +93,7 @@ class ReportController {
 					$carstobeRetuns[]=$returns;
 				}
 			}
-			require_once("view/employee/report_dashboard.php");
+			require_once 'view/employee/report_dashboard.php';
 		}
 	}
 }

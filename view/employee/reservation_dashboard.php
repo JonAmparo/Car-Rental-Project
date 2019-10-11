@@ -1,7 +1,6 @@
 <?php include('includes/head.php'); ?>
 <?php include('includes/header.php'); ?>
-
-<body class="container-fluid">
+<div class="container-fluid">
     <div id="wrapper">
 
         <div id="page-wrapper">
@@ -54,9 +53,9 @@
 
                                                     <td>
                                                         <a class="btn btn-sm btn-warning"
-                                                            href="../../?id=<?= $c->getReservationID()?>&controller=rental&action=getSingleReservation&id=<?= $c->getReservationID()?>">Rent</a>
+                                                            href="?id=<?= $c->getReservationID()?>&controller=rental&action=getSingleReservation&id=<?= $c->getReservationID()?>">Edit</a>
                                                         <a class="btn btn-sm btn-danger"
-                                                            href="../../?id=<?= $c->getReservationID() ?>&controller=rental&action=cancel_Reservation&carId=<?= $c->getCarID() ?>"
+                                                            href="?id=<?= $c->getReservationID() ?>&controller=rental&action=cancel_Reservation&carId=<?= $c->getCarID() ?>"
                                                             onclick="return confirm('are you sure you want to cancel ')">Cancel</a>
                                                     </td>
                                                     <?php } else {?>
@@ -80,6 +79,6 @@
             </div>
         </div>
     </div>
-</body>
+    </body>
 
-</html>
+    </html>

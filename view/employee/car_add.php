@@ -2,7 +2,6 @@
 <?php include('includes/header.php'); ?>
 
 <div class="container-fluid my-5">
-
     <div id="wrapper">
         <div id="ptype-wrapper">
             <div class="row">
@@ -19,9 +18,8 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form" id="AddCar" name="AddCar"
-                                        action="../../index.php/?controller=car&action=addCar" method="POST"
-                                        enctype="multipart/form-data">
+                                    <form role="form" id="AddCar" name="AddCar" action="?controller=car&action=addCar"
+                                        method="POST" enctype="multipart/form-data">
                                         <div class="form-group">
                                             <label>Brand</label>
                                             <input type="text" name="brand" id="brand" class="form-control">
@@ -110,6 +108,7 @@ $(function() {
             rentPrice = $("input[name='rentPrice']");
         $(this).find(".error").remove();
 
+
         if (brand.val().length < 1) {
             validated = false;
             brand.css("border-color", "red");
@@ -120,6 +119,7 @@ $(function() {
             brand.css("border-color", "green");
             brand.parent().find(".error").remove();
         }
+
 
         if (model.val().length < 1) {
             validated = false;
@@ -143,7 +143,8 @@ $(function() {
             type.parent().find(".error").remove();
         }
 
-        if (tankCapacity.val() < 1 || tankCapacity.val() > 200) {
+
+        if (tankCapacity.val() < 1) {
             validated = false;
             tankCapacity.css("border-color", "red");
             tankCapacity.parent().append(
@@ -154,7 +155,7 @@ $(function() {
             tankCapacity.parent().find(".error").remove();
         }
 
-        if ((gasConsumption).val() < 1 || gasConsumption.val() > 95) {
+        if (gasConsumption.val() < 1) {
             validated = false;
             gasConsumption.css("border-color", "red");
             gasConsumption.parent().append(
@@ -164,7 +165,6 @@ $(function() {
             gasConsumption.css("border-color", "green");
             gasConsumption.parent().find(".error").remove();
         }
-
         if (color.val().length < 1) {
             validated = false;
             color.css("border-color", "red");
@@ -174,6 +174,7 @@ $(function() {
             color.css("border-color", "green");
             color.parent().find(".error").remove();
         }
+
 
         if (numberofPassenger.val() < 2) {
             validated = false;
@@ -185,6 +186,7 @@ $(function() {
             numberofPassenger.css("border-color", "green");
             numberofPassenger.parent().find(".error").remove();
         }
+
 
         if (rentPrice.val().length < 1) {
             validated = false;
@@ -233,6 +235,7 @@ $(function() {
 
                 return true;
                 closeWin();
+
             } else
                 return false;
         }

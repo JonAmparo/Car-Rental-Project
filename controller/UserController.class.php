@@ -121,24 +121,24 @@ class UserController {
 
 					$employees= $this->db->display_All_Employees();
 
-					require_once("view/employee/employee_dashboard.php");
+					require_once 'view/employee/employee_dashboard.php';
 				} else {	
 					$_SESSION['error'] =  "Please try a new Email adress .";
 					$employees= $this->db->display_All_Employees();
 
-					require_once("view/employee/employee_dashboard.php");	 					
+					require_once 'view/employee/employee_dashboard.php';	 					
 				}
 			} else {
 				$_SESSION['error'] =  "Please try a new username.";
 				$employees= $this->db->display_All_Employees();
 
-				require_once("view/employee/employee_dashboard.php");
+				require_once 'view/employee/employee_dashboard.php';
 			}
 		} else{
 
 			$employees= $this->db->display_All_Employees();
 
-			require_once("view/employee/employee_dashboard.php");
+			require_once 'view/employee/employee_dashboard.php';
 		}
 	}
 
@@ -201,7 +201,7 @@ class UserController {
 
 				$employees= $this->db->display_All_Employees();
 
-				require_once("view/employee/employee_dashboard.php");
+				require_once 'view/employee/employee_dashboard.php';
 			}
 		}
 	}
@@ -213,7 +213,7 @@ class UserController {
 			$this->db->delete_Login($_GET['username']);
 			$employees= $this->db->display_All_Employees();
 
-			require_once("view/employee/employee_dashboard.php");
+			require_once 'view/employee/employee_dashboard.php';
 		}
 	}
 
@@ -222,14 +222,14 @@ class UserController {
 		if(isset ($_GET['id'])){
 			$userForEdit = $this->db->get_Single_Emplyee_byID($_GET['id']);
 
-			require_once("view/employee/employee_edit.php");
+			require_once 'view/employee/employee_edit.php';
 		}
 	}
 
 	public function getAllClients(){
 		$customers = $this->db->display_All_Customers();
 
-		require_once("view/employee/customer_dashboard.php");
+		require_once 'view/employee/customer_dashboard.php';
 	}
 
 
@@ -248,6 +248,11 @@ class UserController {
 		$employees= $this->db->display_All_Employees();
 		require_once "view/employee/employee_dashboard.php";
 
+	}
+
+	public function addNewCustomer() {
+		// $cars=$this->db->display_All_Cars();
+		require_once "view/employee/customer_add.php";
 	}
 
 	public function addCustomer() 	{
@@ -377,7 +382,7 @@ class UserController {
 	public function getSingleCustomer(){
 		if(isset ($_GET['id'])){
 			$customerEdit = $this->db->display_Single_Customer($_GET['id']); 			
-			require_once("view/employee/customer_edit.php");
+			require_once 'view/employee/customer_edit.php';
 		}
 	}
 

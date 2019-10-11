@@ -46,7 +46,6 @@ class CarController {
 				$_SESSION['error'] =  "Color can't be empty.";
 			}
 
-
 			if (isset( $_POST['numberofPassenger']) && $_POST['numberofPassenger']>0) {
 				$numberofPassenger=($_POST['numberofPassenger']);
 			} else {
@@ -72,7 +71,7 @@ class CarController {
 				$allowed_extensions = ["jpg", "jpeg", "png", "gif", "svg"];
 
 				if(!in_array($ext, $allowed_extensions)){
-					$_SESSION['error'] = "Only image can be uploaded!";
+					$_SESSION['error'] = "image must be uploaded!";
 				}
 				//check for server error
 				if($_FILES['image']['error'] == 0){
@@ -88,10 +87,10 @@ class CarController {
 				$description=($_POST['description']);
 			}
 
-			if (isset( $_POST['status']) && $_POST['status']>0) {
+			if (isset( $_POST['status']) && $_POST['status'] > -1) {
 				$status=($_POST['status']);
 			} else {
-				$_SESSION['error'] =  "Rent price can't be empty.";
+				$_SESSION['error'] =  "Status can't be empty.";
 			}
 
 			if(empty($_SESSION['error']))	{
@@ -114,14 +113,21 @@ class CarController {
 			}
 		}
 		$cars=$this->db->display_All_Cars();
+		// require_once "view/employee/car_add.php";
+		require_once "view/employee/car_dashboard.php";
+	}
+
+	public function addNewCar() {
+		$cars=$this->db->display_All_Cars();
 		require_once "view/employee/car_add.php";
 	}
+
 
 	public function getSingleCar(){
 		if(isset ($_GET['id'])){
 			$carForEdit = $this->db->display_Single_Car($_GET['id']);
 
-			require_once("view/employee/car_edit.php");
+			require_once 'view/employee/car_edit.php';
 		}
 	}
 
@@ -135,7 +141,7 @@ class CarController {
 		if(isset ($_GET['id'])){
 			$carForDisplay = $this->db->display_Single_Car($_GET['id']);
 
-			require_once("view/customers/car-detai.php");
+			require_once 'view/customers/car-detai.php';
 		}
 	}
 
@@ -233,7 +239,7 @@ class CarController {
 				$allowed_extensions = ["jpg", "jpeg", "png", "gif", "svg"];
 
 				if(!in_array($ext, $allowed_extensions)){
-					$_SESSION['error'] = "Only image can be uploaded!";
+					$_SESSION['error'] = "Image must be uploaded!";
 				}
 
 				if($_FILES['image']['error'] == 0){
@@ -243,18 +249,16 @@ class CarController {
 
 			if(!empty($destination) && strlen($destination)>0)
 				move_uploaded_file($_FILES['image']['tmp_name'], $destination);
-
 			$description="";
 
 			if (isset( $_POST['description'])) {
 				$description=($_POST['description']);
-
 			}
 
-			if (isset( $_POST['status']) && $_POST['status']>=0) {
+			if (isset( $_POST['status']) && $_POST['status'] > -1) {
 				$status=($_POST['status']);
 			} else {
-				$_SESSION['error'] =  "Rent price can't be empty.";
+				$_SESSION['error'] =  "Status can't be empty.";
 			}
 
 			if (empty($_SESSION['error']))	{
@@ -272,16 +276,11 @@ class CarController {
 					"description"=>$description,
 					"status"=>$status
 				);
-
 				$car=new Car($car_array);
-
 				$this->db->edit_Car($car);
 			}
-
 		}
-
 		$cars=$this->db->display_All_Cars();
-
 		require_once "view/employee/car_dashboard.php";
 	}
 }

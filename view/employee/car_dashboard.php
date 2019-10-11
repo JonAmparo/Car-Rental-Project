@@ -18,7 +18,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <a href="?controller=car&action=addCar" class="btn btn-success pull-right">Add Car</a>
+                            <a href="?controller=car&action=addNewCar" class="btn btn-success pull-right">Add Car</a>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -40,7 +40,7 @@
                                                     <th>Description</th>
                                                     <th>Status</th>
 
-                                                    <th width="180px">Action</th>
+                                                    <th width="150px">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

@@ -77,13 +77,13 @@ class RentalController {
 
 	public function getAllRents(){
 		$rentals = $this->db->display_All_Rentals(); 		
-		require_once("view/employee/rental_dashboard.php");	
+		require_once "view/employee/rental_dashboard.php";	
 	}
 
 	public function getSingleRental(){	
 		if(isset ($_GET['id'])){
 			$rental = $this->db->display_Single_Rental($_GET['id']); 		
-			require_once("view/employee/return_edit.php");
+			require_once 'view/employee/return_edit.php';
 		}
 	}
 
@@ -91,7 +91,7 @@ class RentalController {
 		if(isset ($_GET['id'])){
 			$this->db->delete_Rental($_GET['id']); 		
 			$rentals = $this->db->display_All_Rentals(); 		
-			require_once("view/employee/rental_dashboard.php");
+			require_once 'view/employee/rental_dashboard.php';
 		}
 	}
 
@@ -240,7 +240,7 @@ class RentalController {
 					$this->db->edit_Rental($rental);
 					$invoice=$this->db->return_car($returnRental, $additionalcharge);
 					$this->db->edit_CarByReturn($carID,1);
-					require_once("view/employee/invoice_final.php");
+					require_once 'view/employee/invoice_final.php';
 					
 				} else{
 					require_once 'view/employee/rental_dashboard.php';

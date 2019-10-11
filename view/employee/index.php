@@ -1,23 +1,10 @@
 <?php 
-require_once "../../model/Car.class.php";
-require_once "../../model/Dashboard.class.php";
-require_once "../../model/Login.class.php";
-
-session_start();
-
-if(isset($_SESSION['error'] )) { ?>
-<script>
-alert("<?php echo  ($_SESSION['error'] )?>");
-</script>
-<?php unset($_SESSION['error']) ;} 
-
-    $user="";
-    if (isset($_SESSION["logged"])){
-
-        $user=$_SESSION["logged"];
-    }
-    ?>
-<?php include('includes/headIndex.php'); ?>
+require_once "model/Car.class.php";
+require_once "model/Dashboard.class.php";
+require_once "model/Login.class.php";
+?>
+<?php include('includes/head.php'); ?>
+<?php include('includes/header.php'); ?>
 
 
 <div class="container-fluid pb-5">
@@ -77,7 +64,7 @@ alert("<?php echo  ($_SESSION['error'] )?>");
 
                                                     <td><?= $c->getNumberofPassenger() ?></td>
                                                     <td><?= $c->getRentPrice() ?>$</td>
-                                                    <td><img src="../../<?= $c->getImage() ?>" width="100" height="80"
+                                                    <td><img src="<?= $c->getImage() ?>" width="100" height="80"
                                                             alt="Car Image" /></td>
                                                     <?php if ($c->getStatus()==1){ ?>
                                                     <td><?php echo "Available"; ?></td>
