@@ -126,7 +126,6 @@ class CarController {
 	public function getSingleCar(){
 		if(isset ($_GET['id'])){
 			$carForEdit = $this->db->display_Single_Car($_GET['id']);
-
 			require_once 'view/employee/car_edit.php';
 		}
 	}

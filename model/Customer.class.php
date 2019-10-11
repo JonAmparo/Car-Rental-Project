@@ -84,8 +84,8 @@ class Customer{
 		$this->password=$password;
 	}
 	
-	public function setFullName($fullname){
-		$this->fullName=$fullname;
+	public function setFullName($fullName){
+		$this->fullName=$fullName;
 	}
 
 	public function setDateofBirth($dateofBirth){

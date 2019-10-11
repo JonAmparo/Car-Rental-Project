@@ -3,7 +3,7 @@
 $controllers = array(
 	"index"=>array("view","faq","contact","displayCarDashboard", "error"),
 	
-	"user"=>array("login","logout", "addEmployee", "editEmployee","deleteEmployee","validate","getAllEmplyees","addCustomer","editCustomer","deleteCustomer","getEmployee","getAllClients","loginLogout", "addNewCustomer", "getSingleCustomer","employee_passw_change","customer_passw_change","passwordChangedViewEmployee","passwordChangedViewCustomer","addCustomerByCustomer","createAccountCustomerView","validateEmplyee","contactUs","error"),
+	"user"=>array("login","logout", "addEmployee", "editEmployee","deleteEmployee","validate","getAllEmplyees","addCustomer","editCustomer","deleteCustomer","getEmployee","getAllClients", "editCustomer", "loginLogout", "addNewCustomer", "getSingleCustomer","employee_passw_change","customer_passw_change","passwordChangedViewEmployee","passwordChangedViewCustomer","addCustomerByCustomer","createAccountCustomerView","validateEmplyee","contactUs","error"),
 
 	"car"=>array("addCar", "addNewCar", "editCar","getSingleCar","getAllCars","carlisting","carDisplay","deleteCar","error"),
 

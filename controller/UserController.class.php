@@ -262,85 +262,71 @@ class UserController {
 
 			if (isset( $_POST['firstname'])) {
 				$firstname=($_POST['firstname']);
-
 			} else {
 				$_SESSION['error'] =  "First name can't be empty.";
 			}
 
-
 			if (isset($_POST['lastname'])) {
 				$lastname=($_POST['lastname']);
-
 			} else {
 				$_SESSION['error'] =  "Last name can't be empty.";
 			}
 
 			if (isset($_POST['username'])) {
 				$username=($_POST['username']);
-
 			} else {
 				$_SESSION['error'] =  "Username can't be empty.";
 			}
 
 			if (isset($_POST['password'])) {
 				$password=$_POST['password'];
-
 			} else {
 				$_SESSION['error'] =  "Password can't be empty.";
 			}
 
 			if (isset($_POST['confirmpassword'])) {
 				$confirmpassword=($_POST['confirmpassword']);
-
 			} else {
 				$_SESSION['error'] =  "Confirm password can't be empty.";
 			}
 
 			if (isset($_POST['dateofBirth'])) {
 				$dateofBirth=$_POST['dateofBirth'];
-
 			} else {
 				$_SESSION['error'] =  "Date of birth can't be empty.";
 			}
 
-
 			if (isset( $_POST['phone'])) {
 				$phone=($_POST['phone']);
-
 			} else {
 				$_SESSION['error'] =  "Phone number can't  be empty.";
 			}
 
 			if (isset($_POST['customerEmail'])) {
 				$customerEmail=($_POST['customerEmail']);
-
 			} else {
 				$_SESSION['error'] =  "email can't be empty.";
 			}
 
 			if (isset($_POST['address'])) {
 				$address=($_POST['address']);
-
 			} else{
 				$_SESSION['error'] =  "Address can't be empty.";
 			}
 
 			if (isset($_POST['customerDriverLicence'])) {
 				$customerDriverLicence=($_POST['customerDriverLicence']);
-
 			} else {
 				$_SESSION['error'] =  "Driver Licence can't be empty.";
 			}
 
 			if (isset($_POST['creditCard'])) {
 				$creditCard=$_POST['creditCard'];
-
 			} else {
 				$_SESSION['error'] =  "credit card can't be empty.";
 			}
 
 			if($password!=$confirmpassword){
-
 				$_SESSION['error'] =  "Password and confirm password does not match.";
 			}
 
@@ -386,91 +372,68 @@ class UserController {
 		}
 	}
 
-
-
 	public function editCustomer() {
-
 		if(isset($_POST['editCustomer'])){
-			if (isset( $_POST['ID']) ) {
+			if (isset( $_POST['ID'])) {
 				$ID=$_POST['ID'];
-
 			} else {
 				$_SESSION['error'] =  "ID can't be empty.";
 			}
 
-			if (isset($_POST['firstname'])) {
-				$firstname=$_POST['firstname'];
-
+			if (isset($_POST['fullName'])) {
+				$fullName=$_POST['fullName'];
 			} else {
-				$_SESSION['error'] =  "First name can't be empty.";
-			}
-
-
-			if (isset($_POST['lastname'])) {
-				$lastname=$_POST['lastname'];
-
-			} else {
-				$_SESSION['error'] =  "Last name can't be empty.";
+				$_SESSION['error'] =  "Full name can't be empty.";
 			}
 
 			if (isset($_POST['username'])) {
 				$username=$_POST['username'];
-
 			} else {
 				$_SESSION['error'] =  "Username can't be empty.";
 			}
 
-
 			if (isset($_POST['dateofBirth'])) {
 				$dateofBirth=($_POST['dateofBirth']);
-
 			} else {
 				$_SESSION['error'] =  "Date of birth can't be empty.";
 			}
 
-
 			if (isset($_POST['phone'])) {
 				$phone=($_POST['phone']);
-
 			} else {
 				$_SESSION['error'] =  "Phone number can't be empty.";
 			}
 
 			if (isset($_POST['customerEmail'])) {
 				$customerEmail=($_POST['customerEmail']);
-
 			} else {
 				$_SESSION['error'] =  "email can't be empty.";
 			}
 
 			if (isset( $_POST['address'])) {
 				$address=($_POST['address']);
-
 			} else{
 				$_SESSION['error'] =  "Address can't be empty.";
 			}
 
 			if (isset($_POST['customerDriverLicence'])) {
 				$customerDriverLicence=($_POST['customerDriverLicence']);
-
 			} else {
 				$_SESSION['error'] =  "Driver Licence can't be empty.";
 			}
 
 			if (isset($_POST['creditCard']))  {
 				$creditCard=$_POST['creditCard'];
-
 			} else {
 				$_SESSION['error'] =  "Credit card can't be empty.";
 			}
-
 
 			if(empty($_SESSION['error'])){
 				$cust_array=array(									
 					"ID"=>$ID, 
 					"username"=>$username, 
 					"password"=>"",
-					"fullName"=>$firstname ." ". $lastname, 
+					"fullName"=>$fullName, 
 					"dateofBirth"=>$dateofBirth,
 					"phone"=>$phone,
 					"customerEmail"=>$customerEmail,
@@ -478,14 +441,11 @@ class UserController {
 					"customerDriverLicence"=>$customerDriverLicence,
 					"creditCard"=>$creditCard
 				);
-
 				$customer=new Customer($cust_array);
-
 				$this->db->edit_Customer($customer);
 			}
 		} 
 		$customers = $this->db->display_All_Customers();
-
 		require_once 'view/employee/customer_dashboard.php';
 	}
 

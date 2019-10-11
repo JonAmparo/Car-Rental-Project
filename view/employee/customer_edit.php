@@ -1,10 +1,8 @@
-
 <?php include('includes/head.php'); ?>
 <?php include('includes/header.php'); ?>
+
 <div class="container-fluid">
-
     <div id="wrapper">
-
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -17,8 +15,9 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form" action="?controller=user&action=editCustomer" method="POST"
-                                        name="form_edit_customer">
+                                    <form role="form" id="EditCustomer" name="EditCustomer"
+                                        action="?controller=user&action=editCustomer" method="POST"
+                                        enctype="multipart/form-data">
 
                                         <div class="form-group">
                                             <label>ID</label>
@@ -27,16 +26,12 @@
                                                 readonly="readonly">
                                         </div>
 
-                                        <div class="form-group">
-                                            <label>First Name</label>
-                                            <input type="text" name="firstname" id="firstname" value="<?=$firstname?>"
-                                                class="form-control" placeholder="First Name">
-                                        </div>
 
                                         <div class="form-group">
-                                            <label>Last Name</label>
-                                            <input type="text" name="lastname" id="lastname" value="<?=$lastname ?>"
-                                                class="form-control" placeholder="Last name">
+                                            <label>Full Name</label>
+                                            <input type="text" name="fullName" id="fullName"
+                                                value="<?=$customerEdit->getFullName() ?>" class="form-control"
+                                                placeholder="Full name">
                                         </div>
                                         <div class="form-group">
                                             <label>Username</label>
@@ -99,229 +94,186 @@
                 </div>
             </div>
         </div>
-
     </div>
-    </body>
+</div>
+</body>
 
-    <script>
-    $(function() {
-        $("#form_edit_customer").submit(function(e) {
-            var validated = true,
-                firstname = $("input[name='firstname']"),
-                lastname = $("input[name='lastname']"),
-                username = $("input[name='username']"),
-                password = $("input[name='password']"),
-                confirmpassword = $("input[name='confirmpassword']"),
-                dateofBirth = $("input[name='dateofBirth']"),
-                phone = $("input[name='phone']"),
-                customerEmail = $("input[name='customerEmail']"),
-                address = $("input[name='address']"),
-                customerDriverLicence = $("input[name='customerDriverLicence']"),
-                creditCard = $("input[name='creditCard']");
+<script>
+$(function() {
+    $("#EditCustomer").submit(function(e) {
+        var validated = true,
+            fullName = $("input[name='fullName']"),
+            username = $("input[name='username']"),
+            password = $("input[name='password']"),
+            confirmpassword = $("input[name='confirmpassword']"),
+            dateofBirth = $("input[name='dateofBirth']"),
+            phone = $("input[name='phone']"),
+            customerEmail = $("input[name='customerEmail']"),
+            address = $("input[name='address']"),
+            customerDriverLicence = $("input[name='customerDriverLicence']"),
+            creditCard = $("input[name='creditCard']");
 
+        $(this).find(".error").remove();
 
-            $(this).find(".error").remove();
+        if (fullName.val().length < 1) {
+            validated = false;
+            fullName.css("border-color", "red");
+            fullName.parent().append(
+                "<span class='error'>Your name cannot be less than 1 character</span>");
+            $(".error").fadeIn(500);
+        } else {
+            fullName.css("border-color", "green");
+            fullName.parent().find(".error").remove();
+        }
 
-
-            if (lastname.val().length < 1) {
-                validated = false;
-                lastname.css("border-color", "red");
-                lastname.parent().append(
-                    "<span class='error'>Your lastname cannot be less than 1 character</span>");
-                $(".error").fadeIn(500);
-            } else {
-                lastname.css("border-color", "green");
-                lastname.parent().find(".error").remove();
-            }
-
-
-            if (firstname.val().length < 1) {
-                validated = false;
-                firstname.css("border-color", "red");
-                firstname.parent().append(
-                    "<span class='error'>Your firstname cannot be less than 1 character</span>");
-                $(".error").fadeIn(500);
-            } else {
-                firstname.css("border-color", "green");
-                firstname.parent().find(".error").remove();
-            }
-
-            if (username.val().length < 5) {
-                validated = false;
-                username.css("border-color", "red");
-                username.parent().append(
-                    "<span class='error'>Your username cannot be less than 5 characters.</span>");
-                $(".error").fadeIn(500);
-            } else {
-                username.css("border-color", "green");
-                username.parent().find(".error").remove();
-            }
-
-
-            if (password.val().length < 5) {
-                validated = false;
-                password.css("border-color", "red");
-                password.parent().append(
-                    "<span class='error'> Your password cannot be less than characters.</span>");
-                $(".error").fadeIn(500);
-            } else {
-                password.css("border-color", "green");
-                password.parent().find(".error").remove();
-            }
-
-            if (confirmpassword.val().length < 5 || (confirmpassword.val() != password.val())) {
-                validated = false;
-                confirmpassword.css("border-color", "red");
-                confirmpassword.parent().append(
-                    "<span class='error'>Your confirmpassword doesn't match. </span>");
-                $(".error").fadeIn(500);
-            } else {
-                confirmpassword.css("border-color", "green");
-                confirmpassword.parent().find(".error").remove();
-            }
-            if (dateofBirth.val().length < 1) {
-                validated = false;
-                dateofBirth.css("border-color", "red");
-                dateofBirth.parent().append(
-                    "<span class='error'>Your date of birth cannot be empty or an invalid date.</span>"
-                    );
-                $(".error").fadeIn(500);
-            } else {
-                dateofBirth.css("border-color", "green");
-                dateofBirth.parent().find(".error").remove();
-            }
-
-
-
-
-            if (phone.val().length < 4) {
-                validated = false;
-                phone.css("border-color", "red");
-                phone.parent().append("<span class='error'> Please enter a valid phone no. </span>");
-                $(".error").fadeIn(500);
-            } else {
-                phone.css("border-color", "green");
-                phone.parent().find(".error").remove();
-            }
-
-
-            if (address.val().length < 1) {
-                validated = false;
-                address.css("border-color", "red");
-                address.parent().append("<span class='error'>Your address cannot be empty. </span>");
-                $(".error").fadeIn(500);
-            } else {
-                address.css("border-color", "green");
-                address.parent().find(".error").remove();
-            }
-            if (customerDriverLicence.val().length < 4) {
-                validated = false;
-                customerDriverLicence.css("border-color", "red");
-                customerDriverLicence.parent().append(
-                    "<span class='error'>Please give a valid driver license .</span>");
-                $(".error").fadeIn(500);
-            } else {
-                customerDriverLicence.css("border-color", "green");
-                customerDriverLicence.parent().find(".error").remove();
-            }
-
-            if (creditCard.val().length < 4) {
-                validated = false;
-                creditCard.css("border-color", "red");
-                creditCard.parent().append(
-                    "<span class='error'>Your creditCard cannot be empty or invalid number.</span>");
-                $(".error").fadeIn(500);
-            } else {
-                creditCard.css("border-color", "green");
-                creditCard.parent().find(".error").remove();
-            }
-
-            if (validated) {
-                msg = "Your information:\n";
-                msg += "Lastname: " + lastname.val() + "\n";
-                msg += "Firstname: " + firstname.val() + "\n";
-                msg += "Password: " + password.val() + "\n";
-                msg += "Date of Birth: " + dateofBirth.val() + "\n";
-                msg += "Number of passenger(s): " + phone.val() + "\n";
-                msg += "Address: " + address.val() + "\n";
-                msg += "Phone: " + phone.val() + "\n";
-                msg += "CustomerDriverLicencess: " + customerDriverLicence.val() + "\n";
-
-
-
-                var yess = confirm(msg);
-                if (yess) {
-                    /*    parent.$.colorbox.close();
-                     */
-                    return true;
-                    /*   closeWin();*/
-
-                } else
-                    return false;
-            }
-            return false;
-        })
-
-        $("#form_edit_customer").on('reset', function(e) {
-            /*location.reload();*/
-            /*                $(this).find(".error").remove();
-             */
-            firstname = $("input[name='firstname']"),
-                lastname = $("input[name='lastname']"),
-                username = $("input[name='username']"),
-                password = $("input[name='password']"),
-                confirmpassword = $("input[name='confirmpassword']"),
-                dateofBirth = $("input[name='dateofBirth']"),
-                phone = $("input[name='phone']"),
-                customerEmail = $("input[name='customerEmail']"),
-                address = $("input[name='address']"),
-                customerDriverLicence = $("input[name='customerDriverLicence']"),
-                creditCard = $("input[name='creditCard']");
-
-
-
-
-
-
-
-            lastname.css("border-color", "inherit");
-            lastname.parent().find(".error").remove();
-
-            firstname.css("border-color", "inherit");
-            firstname.parent().find(".error").remove();
-
-            username.css("border-color", "inherit");
+        if (username.val().length < 5) {
+            validated = false;
+            username.css("border-color", "red");
+            username.parent().append(
+                "<span class='error'>Your username cannot be less than 5 characters.</span>");
+            $(".error").fadeIn(500);
+        } else {
+            username.css("border-color", "green");
             username.parent().find(".error").remove();
+        }
 
-            password.css("border-color", "inherit");
+        if (password.val().length < 5) {
+            validated = false;
+            password.css("border-color", "red");
+            password.parent().append(
+                "<span class='error'> Your password cannot be less than 5 characters.</span>");
+            $(".error").fadeIn(500);
+        } else {
+            password.css("border-color", "green");
             password.parent().find(".error").remove();
+        }
 
-            confirmpassword.css("border-color", "inherit");
+        if (confirmpassword.val().length < 5 || (confirmpassword.val() != password.val())) {
+            validated = false;
+            confirmpassword.css("border-color", "red");
+            confirmpassword.parent().append(
+                "<span class='error'>Your confirmpassword doesn't match. </span>");
+            $(".error").fadeIn(500);
+        } else {
+            confirmpassword.css("border-color", "green");
             confirmpassword.parent().find(".error").remove();
-
-            dateofBirth.css("border-color", "inherit");
+        }
+        if (dateofBirth.val().length < 1) {
+            validated = false;
+            dateofBirth.css("border-color", "red");
+            dateofBirth.parent().append(
+                "<span class='error'>Your date of birth cannot be empty or an invalid date.</span>"
+            );
+            $(".error").fadeIn(500);
+        } else {
+            dateofBirth.css("border-color", "green");
             dateofBirth.parent().find(".error").remove();
+        }
 
-            phone.css("border-color", "inherit");
+        if (phone.val().length < 4) {
+            validated = false;
+            phone.css("border-color", "red");
+            phone.parent().append("<span class='error'> Please enter a valid phone no. </span>");
+            $(".error").fadeIn(500);
+        } else {
+            phone.css("border-color", "green");
             phone.parent().find(".error").remove();
+        }
 
-            address.css("border-color", "inherit");
+
+        if (address.val().length < 1) {
+            validated = false;
+            address.css("border-color", "red");
+            address.parent().append("<span class='error'>Your address cannot be empty. </span>");
+            $(".error").fadeIn(500);
+        } else {
+            address.css("border-color", "green");
             address.parent().find(".error").remove();
-
-            customerDriverLicence.css("border-color", "inherit");
+        }
+        if (customerDriverLicence.val().length < 4) {
+            validated = false;
+            customerDriverLicence.css("border-color", "red");
+            customerDriverLicence.parent().append(
+                "<span class='error'>Please give a valid driver license .</span>");
+            $(".error").fadeIn(500);
+        } else {
+            customerDriverLicence.css("border-color", "green");
             customerDriverLicence.parent().find(".error").remove();
+        }
 
-
-            creditCard.css("border-color", "inherit");
+        if (creditCard.val().length < 4) {
+            validated = false;
+            creditCard.css("border-color", "red");
+            creditCard.parent().append(
+                "<span class='error'>Your creditCard cannot be empty or invalid number.</span>");
+            $(".error").fadeIn(500);
+        } else {
+            creditCard.css("border-color", "green");
             creditCard.parent().find(".error").remove();
+        }
 
+        if (validated) {
+            msg = "Your information:\n";
+            msg += "Name: " + fullName.val() + "\n";
+            msg += "Password: " + password.val() + "\n";
+            msg += "Date of Birth: " + dateofBirth.val() + "\n";
+            msg += "Number of passenger(s): " + phone.val() + "\n";
+            msg += "Address: " + address.val() + "\n";
+            msg += "Phone: " + phone.val() + "\n";
+            msg += "CustomerDriverLicencess: " + customerDriverLicence.val() + "\n";
 
+            var yess = confirm(msg);
+            if (yess) {
+                return true;
+            } else
+                return false;
+        }
+        return false;
+    })
 
+    $("#EditCustomer").on('reset', function(e) {
+        location.reload();
+        $(this).find(".error").remove();
 
+        fullName = $("input[name='fullName']"),
+            username = $("input[name='username']"),
+            password = $("input[name='password']"),
+            confirmpassword = $("input[name='confirmpassword']"),
+            dateofBirth = $("input[name='dateofBirth']"),
+            phone = $("input[name='phone']"),
+            customerEmail = $("input[name='customerEmail']"),
+            address = $("input[name='address']"),
+            customerDriverLicence = $("input[name='customerDriverLicence']"),
+            creditCard = $("input[name='creditCard']");
 
-        });
+        fullName.css("border-color", "inherit");
+        fullName.parent().find(".error").remove();
+
+        username.css("border-color", "inherit");
+        username.parent().find(".error").remove();
+
+        password.css("border-color", "inherit");
+        password.parent().find(".error").remove();
+
+        confirmpassword.css("border-color", "inherit");
+        confirmpassword.parent().find(".error").remove();
+
+        dateofBirth.css("border-color", "inherit");
+        dateofBirth.parent().find(".error").remove();
+
+        phone.css("border-color", "inherit");
+        phone.parent().find(".error").remove();
+
+        address.css("border-color", "inherit");
+        address.parent().find(".error").remove();
+
+        customerDriverLicence.css("border-color", "inherit");
+        customerDriverLicence.parent().find(".error").remove();
+
+        creditCard.css("border-color", "inherit");
+        creditCard.parent().find(".error").remove();
+
     });
-    </script>
-
-
-    </html>
+});
+</script>
+</html>

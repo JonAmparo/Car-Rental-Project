@@ -58,9 +58,9 @@
                                                     <td><?= $c->getCreditCard() ?></td>
                                                     <td>
                                                         <a class="btn btn-sm btn-warning"
-                                                            href="../../?id=<?= $c->getCustomerID()?>&controller=user&action=getSingleCustomer">Edit</a>
+                                                            href="?id=<?= $c->getCustomerID()?>&controller=user&action=getSingleCustomer">Edit</a>
                                                         <a class="btn btn-sm btn-danger"
-                                                            href="../../?id=<?= $c->getCustomerID() ?>&controller=user&action=deleteCustomer&username=<?= $c->getUserName() ?>"
+                                                            href="?id=<?= $c->getCustomerID() ?>&controller=user&action=deleteCustomer&username=<?= $c->getUserName() ?>"
                                                             onclick="return confirm('are you sure you want to delete <?= $c->getFullName() ?>')">Delete</a>
                                                     </td>
                                                 </tr>
