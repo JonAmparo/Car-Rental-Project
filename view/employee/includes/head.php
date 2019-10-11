@@ -10,6 +10,9 @@
     <!-- Style Sheet -->
     <link href="view/employee/assets/css/style.css" rel="stylesheet">
 
+    <!-- icon -->
+    <link rel="icon" type="image/png" href="view/employee/assets/images/icon.png">
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,600i,700" rel="stylesheet">
 
@@ -38,7 +41,5 @@
         integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous">
     </script>
 
-    <!-- icon -->
-    <link rel="icon" type="image/png" href="view/employee/assets/images/icon.png">
 
 </head>

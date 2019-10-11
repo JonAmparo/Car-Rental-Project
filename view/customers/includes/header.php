@@ -1,5 +1,6 @@
 <?php 
 $user="";
+
 if (isset($_SESSION["logged"])){
 	$user=$_SESSION["logged"];
 }
@@ -11,6 +12,7 @@ alert("<?php echo  ($_SESSION['error'] )?>");
 <?php unset($_SESSION['error']) ;
 } 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

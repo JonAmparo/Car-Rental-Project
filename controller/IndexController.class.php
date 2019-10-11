@@ -25,16 +25,16 @@ class IndexController {
 				// header("Location: view/employee/index.php");
 			} else if ($level === 3) {
 				require_once 'view/customers/index.php';
+			} else {
+				require_once 'view/customers/index.php';
 			}
 		}
+		// $is_err=(isset( $_SESSION['error']));
+		// $error_message ="" ;
 
-		$is_err=(isset( $_SESSION['error']));
-		$error_message ="" ;
-
-		if (isset($_SESSION['error']) ) {
-			$error_message=$_SESSION['error'];
-		}
-		// require_once 'view/customers/index.php';
+		// if (isset($_SESSION['error']) ) {
+		// 	$error_message=$_SESSION['error'];
+		// }
 	}
 
 	public function displayCarDashboard(){

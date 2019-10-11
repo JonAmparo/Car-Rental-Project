@@ -1,6 +1,6 @@
 <?php $dashboard = $_SESSION['dashboard']; ?>
 <br>
-<div class="row">
+<div class="row mx-1">
     <div class="col-lg-3 col-md-6">
         <div class="panel panel-primary">
             <div class="panel-heading">

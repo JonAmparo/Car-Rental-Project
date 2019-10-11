@@ -91,7 +91,6 @@
     </div>
 </div>
 </body>
-
 <script>
 $(function() {
     $("#form_customer").submit(function(e) {
@@ -107,10 +106,7 @@ $(function() {
             address = $("input[name='address']"),
             customerDriverLicence = $("input[name='customerDriverLicence']"),
             creditCard = $("input[name='creditCard']");
-
-
         $(this).find(".error").remove();
-
 
         if (lastname.val().length < 1) {
             validated = false;
@@ -122,7 +118,6 @@ $(function() {
             lastname.css("border-color", "green");
             lastname.parent().find(".error").remove();
         }
-
 
         if (firstname.val().length < 1) {
             validated = false;
@@ -145,7 +140,6 @@ $(function() {
             username.css("border-color", "green");
             username.parent().find(".error").remove();
         }
-
 
         if (password.val().length < 5) {
             validated = false;
@@ -190,7 +184,6 @@ $(function() {
             phone.parent().find(".error").remove();
         }
 
-
         if (customerEmail.val().length < 4) {
             validated = false;
             customerEmail.css("border-color", "red");
@@ -211,6 +204,7 @@ $(function() {
             address.css("border-color", "green");
             address.parent().find(".error").remove();
         }
+
         if (customerDriverLicence.val().length < 4) {
             validated = false;
             customerDriverLicence.css("border-color", "red");
@@ -266,12 +260,6 @@ $(function() {
             customerDriverLicence = $("input[name='customerDriverLicence']"),
             creditCard = $("input[name='creditCard']");
 
-
-
-
-
-
-
         lastname.css("border-color", "inherit");
         lastname.parent().find(".error").remove();
 
@@ -302,13 +290,7 @@ $(function() {
 
         creditCard.css("border-color", "inherit");
         creditCard.parent().find(".error").remove();
-
-
-
-
-
     });
 });
 </script>
-
 </html>

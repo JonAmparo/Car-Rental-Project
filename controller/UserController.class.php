@@ -40,11 +40,15 @@ class UserController {
 				} else {
 					$_SESSION['error']= "Username/password is wrong. or, not you didn't verify yet!";
 
-					header("Location:../index.php");
+					header("Location: ../index.php");
 				}
 			} else
 			header("Location: ../index.php");
 		}
+	}
+
+	public function addNewEmployee() {
+		require_once "view/employee/employee_add.php";
 	}
 
 	public function addEmployee(){
@@ -153,14 +157,12 @@ class UserController {
 			}
 			if (isset( $_POST['firstname'])) {
 				$firstname=($_POST['firstname']);
-
 			} else {
 				$_SESSION['error'] =  "First name can't empty.";
 			}
 
 			if (isset( $_POST['lastname'])) {
 				$lastname=($_POST['lastname']);
-
 			} else {
 				$_SESSION['error'] =  "Last name can't empty.";
 			}
@@ -171,7 +173,6 @@ class UserController {
 
 			if (isset( $_POST['status'])) {
 				$status=($_POST['status']);
-
 			} else {
 				$_SESSION['error'] =  "Status can't be empty.";
 			}
@@ -181,14 +182,14 @@ class UserController {
 
 			if (isset( $_POST['email'])) {
 				$email=($_POST['email']);
-
 			} else {
 				$_SESSION['error'] =  "Valid email is missing.";
 			}
 
 			if(empty($_SESSION['error']))	{
 
-				$user_array=array("ID"=>$ID,								
+				$user_array=array(
+					"ID"=>$ID,								
 					"username"=>$username, 
 					"password"=>"", 
 					"fullName"=>$firstname." ".$lastname ,
@@ -373,6 +374,7 @@ class UserController {
 	}
 
 	public function editCustomer() {
+
 		if(isset($_POST['editCustomer'])){
 			if (isset( $_POST['ID'])) {
 				$ID=$_POST['ID'];
@@ -380,10 +382,22 @@ class UserController {
 				$_SESSION['error'] =  "ID can't be empty.";
 			}
 
-			if (isset($_POST['fullName'])) {
-				$fullName=$_POST['fullName'];
+			// if (isset($_POST['fullName'])) {
+			// 	$fullName=$_POST['fullName'];
+			// } else {
+			// 	$_SESSION['error'] =  "Full name can't be empty.";
+			// }
+
+			if (isset($_POST['firstname'])) {
+				$firstname=$_POST['firstname'];
 			} else {
-				$_SESSION['error'] =  "Full name can't be empty.";
+				$_SESSION['error'] =  "First name can't be empty.";
+			}
+			
+			if (isset($_POST['lastname'])) {
+				$lastname=$_POST['lastname'];
+			} else {
+				$_SESSION['error'] =  "Last name can't be empty.";
 			}
 
 			if (isset($_POST['username'])) {
@@ -433,7 +447,7 @@ class UserController {
 					"ID"=>$ID, 
 					"username"=>$username, 
 					"password"=>"",
-					"fullName"=>$fullName, 
+					"fullName"=>$firstname ." ". $lastname, 
 					"dateofBirth"=>$dateofBirth,
 					"phone"=>$phone,
 					"customerEmail"=>$customerEmail,
@@ -495,7 +509,6 @@ class UserController {
 
 				if (isset( $_POST['confirmpassword'])) {
 					$confirmpassword=md5($_POST['confirmpassword']);
-
 				} else {
 					$_SESSION['error'] =  "Confirm password can't be empty.";
 				}
@@ -521,8 +534,11 @@ class UserController {
 
 					$loginUser=new Login($login_array);
 					$this->db->employee_passw_change($loginUser);
-					unset($_SESSION['logged']);
-					require_once "view/customers/index.php";
+					// unset($_SESSION['logged']);
+					require_once "view/employee/index.php";
+					echo '<script language="javascript">';
+					echo 'alert("Password succesfully updated!")';
+					echo '</script>';
 				}
 			}
 		}

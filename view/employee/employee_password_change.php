@@ -1,5 +1,5 @@
 <?php include('includes/head.php'); ?>
-<?php include('includes/headerEdit.php'); ?>
+<?php include('includes/header.php'); ?>
 
 <div class="container-fluid my-5">
     <div id="wrapper">
@@ -16,7 +16,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form" action="index.php/?controller=user&action=employee_passw_change"
+                                    <form role="form" action="?controller=user&action=employee_passw_change"
                                         method="POST" id="passwordChange_Employee" name="passwordChange_Employee">
                                         <div class="form-group">
                                             <label>Old Password</label>
@@ -39,7 +39,6 @@
                                         <button type="reset" class="btn btn-success">Reset Button</button>
                                     </form>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -89,7 +88,7 @@ $(function() {
             validated = false;
             confirmpassword.css("border-color", "red");
             confirmpassword.parent().append(
-                "<span class='error'>Your confirmpassword doesn't match. </span>");
+                "<span class='error'>Your confirm password doesn't match. </span>");
             $(".error").fadeIn(500);
         } else {
             confirmpassword.css("border-color", "green");
@@ -97,15 +96,11 @@ $(function() {
         }
 
         if (validated) {
-            msg = "Are you sure to change current password?\n";
+            msg = "Are you sure you want to change current your current password?\n";
 
             var yess = confirm(msg);
             if (yess) {
-                /*    parent.$.colorbox.close();
-                 */
                 return true;
-                /*   closeWin();*/
-
             } else
                 return false;
         }

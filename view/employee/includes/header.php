@@ -1,7 +1,7 @@
 <?php 
 $user="";
 if (isset($_SESSION["logged"])){
-	$user=$_SESSION["logged"]; } ?>
+    $user=$_SESSION["logged"]; } ?>
 
 <?php 
 if(isset($_SESSION['error'] )) { ?>

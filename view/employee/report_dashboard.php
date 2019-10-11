@@ -1,10 +1,10 @@
 <?php include('includes/head.php'); ?>
 <?php include('includes/header.php'); ?>
 
-<div class="container-fluid">
+<div class="container-fluid my-3">
     <div id="wrapper">
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <nav class="navbar navbar-default navbar-static-top mb-0" role="navigation">
         </nav>
         <div id="page-wrapper">
             <div class="row">
@@ -26,10 +26,6 @@
                             <div class="col-lg-12">
                                 <h4>Cars dashboard
                                 </h4>
-                                <div class="row">
-
-                                </div>
-
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
@@ -68,7 +64,7 @@
                                                     <td style="background-color: <?= $c->getColor() ?>">&nbsp;</td>
                                                     <td><?= $c->getNumberofPassenger() ?></td>
                                                     <td><?= $c->getRentPrice() ?></td>
-                                                    <td><img src="../../<?= $c->getImage() ?>" width="100" height="80"
+                                                    <td><img src="<?= $c->getImage() ?>" width="100" height="80"
                                                             alt="Car Image" /></td>
                                                     <td><?= $c->getDescription() ?></td>
                                                     <?php if ($c->getStatus()== 0){ ?>
@@ -78,7 +74,7 @@
                                                     <?php }?>
                                                     <td>
                                                         <a class="btn btn-sm btn-primary"
-                                                            href="../../?id=<?= $c->getCarID()?>&controller=report&action=getCarHistory">View</a>
+                                                            href="?id=<?= $c->getCarID()?>&controller=report&action=getCarHistory">View</a>
                                                     </td>
                                                 </tr>
                                                 <?php endforeach; ?>
@@ -89,8 +85,6 @@
                             </div>
                             <div class="col-lg-12">
                                 <h4>Clients dashboard</h4>
-                            </div>
-                            <div class="row">
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
@@ -128,7 +122,7 @@
                                                     <td><?= $c->getCreditCard() ?></td>
                                                     <td>
                                                         <a class="btn btn-sm btn-primary"
-                                                            href="../../?id=<?= $c->getCustomerID()?>&controller=report&action=getClientHistory">View</a>
+                                                            href="?id=<?= $c->getCustomerID()?>&controller=report&action=getClientHistory">View</a>
 
                                                     </td>
                                                 </tr>
@@ -176,13 +170,10 @@
                                                     <td><?= $rental['dateStart'] ?></td>
                                                     <td><?= $rental['dateEnd'] ?></td>
                                                     <td><?= $rental['price'] ?></td>
-
                                                     <td>
                                                         <a class="btn btn-sm btn-primary"
-                                                            href="../../?id=<?= $r->getCarID()?>&controller=report&action=getCarHistory">View</a>
-
+                                                            href="?id=<?= $r->getCarID()?>&controller=report&action=getCarHistory">View</a>
                                                     </td>
-
                                                 </tr>
                                                 <?php endforeach; ?>
                                             </tbody>

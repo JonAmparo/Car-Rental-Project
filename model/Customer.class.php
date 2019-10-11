@@ -25,12 +25,9 @@ class Customer{
 		$this->address = $array['address'];
 		$this->customerDriverLicence = $array['customerDriverLicence'];
 		$this->creditCard = $array['creditCard'];
-
 	}
 
-	
 	// Getters
-
 	public function getCustomerID(){
 		return $this->ID;
 	}
