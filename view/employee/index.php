@@ -3,8 +3,10 @@ require_once "model/Car.class.php";
 require_once "model/Dashboard.class.php";
 require_once "model/Login.class.php";
 ?>
-<?php include('includes/head.php'); ?>
-<?php include('includes/header.php'); ?>
+<?php include('includes/head.php');  ?>
+<?php include('includes/header.php'); 
+// var_dump($user); 
+?>
 
 
 <div class="container-fluid pb-5">
@@ -27,7 +29,6 @@ require_once "model/Login.class.php";
 
             <div class="row">
                 <div class="col-lg-12">
-
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="row">

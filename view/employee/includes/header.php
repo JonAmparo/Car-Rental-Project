@@ -73,7 +73,6 @@ alert("<?php echo  ($_SESSION['error'] )?>");
                 </ul>
                 <br>
                 <!-- Register / Login button -->
-
                 <?php if ($user!=null && !empty($user)){?>
 
                 <div class="ml-5">
@@ -85,8 +84,8 @@ alert("<?php echo  ($_SESSION['error'] )?>");
                 <?php } else { ?>
 
                 <div class="ml-5">
-                    <a href="?controller=user&action=login">
-                        <button class=" btn btn-primary" role="button">Logout</button>
+                    <a href="?controller=user&action=loginScreen">
+                        <button class=" btn btn-primary" role="button">Login</button>
                     </a>
                 </div>
                 <?php } ?>

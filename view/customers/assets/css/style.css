@@ -85,10 +85,6 @@
     text-align:center;
 }
 
-.ml-15 {
-  margin-left: ($spacer * 9) !important;
-}
-
 #welcome a, #goal a, #history a{
 	color: rgb(0, 0, 0);
     font-weight: 700;
@@ -116,18 +112,6 @@ footer a {
 footer a:hover {
 	color: #29558b; /* Navy blue*/
 	font-weight: 700;
-}
-
-a.btn {
-	color: white;
-	background-color: #29558b; /* Navy Blue */
-	border-color: #29558b;
-}
-
-a.btn:hover {
-	color: white;
-	background-color: #0a2e5b; /* Navy Blue */
-	border-color: #29558b;
 }
 
 a p:hover {

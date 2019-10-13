@@ -8,7 +8,6 @@ class UserController {
 	}
 
 	public function login(){
-
 		if(isset($_POST['login'])){
 
 			if (isset( $_POST['username'])) {
@@ -22,29 +21,48 @@ class UserController {
 				$_SESSION['error'] =  "Password can't be empty.";
 			}
 
-
 			if(empty($_SESSION['error'])){
 				$user_exist= $this->db->verify_existence("username", $username, "login");
 
 				if ($user_exist==true){
 					$singleuser = $this->db->verify_login(array("username"=>$username, "password"=>md5($password)));
 
-					if($singleuser!=null && !empty($singleuser)&& $singleuser->getUsername()!=null)
+					if($singleuser!=null && !empty($singleuser)&& $singleuser->getUsername()!=null) {
 						$_SESSION["logged"]=($singleuser);
-					else
-						$_SESSION['error']= "Username/password is wrong. or, not you didn't verify yet!";
+					} else{
+						$_SESSION['error']= "Username/Password doesn't exist";
+					}
 
-					echo "username/password incorrect";
+					$logged_user=($_SESSION['logged']);
+					$level= $logged_user->getLevel();
 
-					header("Location: ../index.php");
-				} else {
-					$_SESSION['error']= "Username/password is wrong. or, not you didn't verify yet!";
-
-					header("Location: ../index.php");
-				}
-			} else
-			header("Location: ../index.php");
+					if (($level == 1 || $level == 2)){
+						$cars=$this->db->display_All_Cars();
+						$_SESSION['cars']=$cars;
+						$_SESSION['dashboard']=$this->db->getDashboard();
+						require_once 'view/employee/index.php';
+						// echo '<script language="javascript">';
+						// echo 'alert("employee Signed in succesfully!")';
+						// echo '</script>';
+					} elseif ($level == 3) {
+						require_once 'view/customers/index.php';
+						// echo '<script language="javascript">';
+						// echo 'alert("customers index")';
+						// echo '</script>';
+					} 
+				} 
+			} else {
+				require_once 'view/customers/index.php';
+				// echo '<script language="javascript">';
+				// echo 'alert("no success!")';
+				// echo '</script>';
+			}
 		}
+	}
+
+	public function loginScreen(){
+		require_once 'view/customers/login.php';
+		// header("Location: view/employee/index.php");
 	}
 
 	public function addNewEmployee() {
@@ -475,18 +493,18 @@ class UserController {
 	}
 
 	public function loginLogout(){
-
 		require_once "view/customers/login.php";
-
 	}
 
 	public function logout(){
-
 		if (isset($_SESSION["logged"])){
 			unset($_SESSION["logged"]);
 		}
-
-		require_once "view/customers/login.php";
+		// require_once "view/customers/login.php";
+		require_once "view/customers/index.php";
+		echo '<script language="javascript">';
+		echo 'alert("Succesfully logged off!")';
+		echo '</script>';
 	}
 
 	public function employee_passw_change(){
@@ -550,21 +568,20 @@ class UserController {
 			if (isset($_POST['PasswordChangeCustomer'])) {
 
 
-				if (isset( $_POST['oldPassword'])) {
+				if (isset($_POST['oldPassword'])) {
 					$oldpassword=md5($_POST['oldPassword']);
 				} else {
 					$_SESSION['error'] =  "Old Password can't be empty.";
 				}
 
-				if (isset( $_POST['password'])) {
+				if (isset($_POST['password'])) {
 					$password=md5($_POST['password']);
 				} else {
 					$_SESSION['error'] =  "New Password can't be empty.";
 				}
 
-				if (isset( $_POST['confirmpassword'])) {
+				if (isset($_POST['confirmpassword'])) {
 					$confirmpassword=md5($_POST['confirmpassword']);
-
 				} else {
 					$_SESSION['error'] =  "Confirm password can't be empty.";
 				}
@@ -575,7 +592,8 @@ class UserController {
 				}
 
 				if($password!=$confirmpassword){
-					$_SESSION['error'] =  "password does match with confirm password";
+					$_SESSION['error'] =  "New password doesn't match with confirm password";
+					require_once "view/customers/customer_password_change.php";
 				}
 
 				if(empty($_SESSION['error'])){
@@ -589,9 +607,16 @@ class UserController {
 
 					$loginUser=new Login($login_array);
 					$this->db->customer_passw_change($loginUser);
-					unset($_SESSION['logged']);
+					// unset($_SESSION['logged']);
 					require_once "view/customers/index.php";
+					echo '<script language="javascript">';
+					echo 'alert("Password succesfully updated!")';
+					echo '</script>';
 				}
+			} else {
+				echo '<script language="javascript">';
+				echo 'alert("FFFFFFFFFFFFFFFFFFFFFFF")';
+				echo '</script>';
 			}
 		}
 	}

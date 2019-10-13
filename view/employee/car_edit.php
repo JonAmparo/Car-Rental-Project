@@ -152,7 +152,6 @@ $(function() {
             type.parent().find(".error").remove();
         }
 
-
         if (tankCapacity.val() < 1) {
             validated = false;
             tankCapacity.css("border-color", "red");
@@ -240,11 +239,7 @@ $(function() {
 
             var yess = confirm(msg);
             if (yess) {
-                /*    parent.$.colorbox.close();
-                 */
                 return true;
-                /*   closeWin();*/
-
             } else
                 return false;
         }

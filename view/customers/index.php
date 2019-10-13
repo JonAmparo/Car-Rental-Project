@@ -1,6 +1,7 @@
-<?php 
-include('includes/header.php');
-?>
+<?php include('includes/head.php');?>
+<?php include('includes/header.php'); 
+// var_dump($user); 
+ ?>
 
 <!-- Carousel -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -11,13 +12,13 @@ include('includes/header.php');
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="assets/images/car1.jpg" alt="First slide">
+            <img class="d-block w-100" src="view/customers/assets/images/car1.jpg" alt="First slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="assets/images/car2.jpg" alt="Second slide">
+            <img class="d-block w-100" src="view/customers/assets/images/car2.jpg" alt="Second slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="assets/images/car7.jpg" alt="Third slide">
+            <img class="d-block w-100" src="view/customers/assets/images/car7.jpg" alt="Third slide">
         </div>
     </div>
 </div>
@@ -56,8 +57,10 @@ include('includes/header.php');
                 <h3>HELLO AND <span class="navy-blue">WELCOME</span></h3>
                 <p><i>TO MURDLOS RENTALS</i></p>
                 <br>
-                <p class="lead"> Established for more than 29 years, Murdlo's Rentals offers the top and most affordable
-                    car rentals in Montreal. Cars can also be rented out for specific needs. We're active in the great
+                <p class="lead"> Established for more than 29 years, Murdlo's Rentals offers the top and most
+                    affordable
+                    car rentals in Montreal. Cars can also be rented out for specific needs. We're active in the
+                    great
                     city of Montreal. Here are few places we send our cars to but not limited to:
                     <br>
                     <hr>
@@ -75,8 +78,10 @@ include('includes/header.php');
                 <h3>A WORD FROM THE <span class="navy-blue">PRESIDENT</span></h3>
                 <br>
                 <p><i>"Our main goal is to provide and maintain a the best car rentals available in Montreal and
-                        surronding areas around us. We provide quick, reliable 24 hour service. We have a wide variety
-                        of cars so you're not limited by options but overwhelmed about which one you'll be renting from
+                        surronding areas around us. We provide quick, reliable 24 hour service. We have a wide
+                        variety
+                        of cars so you're not limited by options but overwhelmed about which one you'll be renting
+                        from
                         us."</i>
                     <br>
                     <br>
@@ -101,7 +106,7 @@ include('includes/header.php');
         </div>
 
         <!-- Right half of page (picture) -->
-        <img src="../assets/images/carTrans.png" class="rounded col-sm-6" alt="Side car"
+        <img src="view/customers/assets/images/carTrans.png" class="rounded col-sm-6" alt="Side car"
             style="width: 250px; height: 400px;">
     </div>
     <!-- End of toggle Tabs -->

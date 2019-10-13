@@ -5,13 +5,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Employee test Dashboard</title>
+    <title>JonAmparo's Car Rental Service</title>
 
     <!-- Style Sheet -->
-    <link href="view/employee/assets/css/style.css" rel="stylesheet">
+    <link href="view/customers/assets/css/style.css" rel="stylesheet">
 
     <!-- icon -->
-    <link rel="icon" type="image/png" href="view/employee/assets/images/icon.png">
+    <link rel="icon" type="image/png" href="view/customers/assets/images/icon.png">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,600i,700" rel="stylesheet">
