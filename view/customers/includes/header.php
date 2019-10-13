@@ -1,4 +1,8 @@
 <?php 
+if(!isset($_SESSION)){
+    session_start();
+}
+
 $user="";
 if (isset($_SESSION["logged"])){
     $user=$_SESSION["logged"];  
@@ -20,7 +24,7 @@ alert("<?php echo  ($_SESSION['error'] )?>");
         <div class="container">
 
             <!-- Brand/logo -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="?controller=index&action=home">
                 <img src="view/customers/assets/images/icon.png" alt="Car Rental Logo" style="width:50px;">
             </a>
 

@@ -50,12 +50,16 @@ class UserController {
 						// echo 'alert("customers index")';
 						// echo '</script>';
 					} 
+				} else {
+					require_once 'view/customers/login.php';
+					$_SESSION['error']= "Incorrect Username/Password!";
+					// echo '<script language="javascript">';
+					// echo 'alert("Incorrect Username/Password!")';
+					// echo '</script>';
 				} 
 			} else {
-				require_once 'view/customers/index.php';
-				// echo '<script language="javascript">';
-				// echo 'alert("no success!")';
-				// echo '</script>';
+				require_once 'view/customers/login.php';
+				$_SESSION['error']= "Incorrect Username/Password!";
 			}
 		}
 	}
@@ -400,12 +404,6 @@ class UserController {
 				$_SESSION['error'] =  "ID can't be empty.";
 			}
 
-			// if (isset($_POST['fullName'])) {
-			// 	$fullName=$_POST['fullName'];
-			// } else {
-			// 	$_SESSION['error'] =  "Full name can't be empty.";
-			// }
-
 			if (isset($_POST['firstname'])) {
 				$firstname=$_POST['firstname'];
 			} else {
@@ -633,14 +631,12 @@ class UserController {
 		}
 	}
 
-	public function addCustomerByCustomer() 	{
-		date_default_timezone_set("America/New_York");
-
+	public function addCustomerByCustomer(){
 		if(isset($_POST['createCustomer'])){
-
-			if (isset( $_POST['firstname'])) {
+		date_default_timezone_set("America/New_York");
+		
+			if (isset($_POST['firstname'])) {
 				$firstname=($_POST['firstname']);
-
 			} else {
 				$_SESSION['error'] =  "First name can't be empty.";
 			}
@@ -674,7 +670,6 @@ class UserController {
 			} else {
 				$_SESSION['error'] =  "Date of birth can't be empty.";
 			}
-
 
 			if (isset( $_POST['phone'])) {
 				$phone=($_POST['phone']);
@@ -710,7 +705,7 @@ class UserController {
 				$_SESSION['error'] =  "Password and confirm password does not match.";
 			}
 
-			if(empty($_SESSION['error']))	{
+			if(empty($_SESSION['error'])){
 				$cust_array=array(									
 					"ID"=>0, 
 					"username"=>$username, 
@@ -737,27 +732,25 @@ class UserController {
 
 				$this->db->add_Customer($customer);
 				$this->db->add_Login($loginUser);
-				$subject  = 'Email verification';
-				$message  = 'Please click the link below to confirm registration.'."\n";
-				$message =  $message. "<a href=/http://localhost:8080/PHPPROJMASTER/?controller=user&action=validateCustomer&userID=".self::myEncoding($username)."> click here </a>";
+				// $subject  = 'Email verification';
+				// $message  = 'Please click the link below to confirm registration.'."\n";
+				// $message =  $message. "<a href=/http://localhost:8080/PHPPROJMASTER/?controller=user&action=validateCustomer&userID=".self::myEncoding($username)."> click here </a>";
 
-				echo $message;
+				// echo $message;
 
-				$sent_mail=$customer->sendEmail($subject,$message);
+				// $sent_mail=$customer->sendEmail($subject,$message);
 
-				if($sent_mail)
-					echo "Email sent";
-				else
-					echo "Email sending failed";
+				// if($sent_mail)
+				// 	echo "Email sent";
+				// else
+				// 	echo "Email sending failed";
 			}
 		}
 		$customers = $this->db->display_All_Customers();
-
 		require_once 'view/customers/index.php';
 	}
 
 	public function createAccountCustomerView(){
-
 		require_once "view/customers/register.php";
 	}
 

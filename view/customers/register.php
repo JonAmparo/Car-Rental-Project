@@ -1,103 +1,99 @@
 <?php include('includes/head.php'); ?>
 <?php include('includes/header.php'); ?>
 
-<div class="container-fluid">
-    <br>
-    <br>
-    <h1 class="text-center navy-blue">
-        <span class="text-black">REGIS</span>TER
-    </h1>
-    <hr>
-    <!-- End-->
 
-    <!-- Default form login -->
-    <form>
-        <p class="h4 text-center mb-4"></p>
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Register</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form role="form" action="?controller=user&action=addCustomerByCustomer" method="POST"
+                                id="form_customer" name="form_customer ">
 
-        <!-- PAGE -->
-        <section class="page-section color">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h3 class="block-title"><span>Add Customer</span></h3>
-                        <form role="form" action="?controller=user&action=addCustomerByCustomer" method="POST"
-                            id="form_customer" name="form_customer ">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>First Name</label>
+                                            <input type="text" name="firstname" id="firstname" class="form-control"
+                                                placeholder="First name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Last Name</label>
+                                            <input type="text" name="lastname" id="lastname" class="form-control"
+                                                placeholder="Last name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Username</label>
+                                            <input type="text" name="username" id="username" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input type="password" name="password" id="password" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Confirm Password</label>
+                                            <input type="password" name="confirmpassword" id="confirmpassword"
+                                                class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Date of Birth</label>
+                                            <input type="date" name="dateofBirth" id="dateofBirth" max="1999-10-31"
+                                                min="1930-06-18" class="form-control" placeholder="mm/dd/yyyy">
+                                        </div>
+                                    </div>
 
-                            <div class="form-group">
-                                <label>First Name</label>
-                                <input type="text" name="firstname" id="firstname" class="form-control"
-                                    placeholder="first name">
-                            </div>
-                            <div class="form-group">
-                                <label>Last Name</label>
-                                <input type="text" name="lastname" id="lastname" class="form-control"
-                                    placeholder="last name">
-                            </div>
-                            <div class="form-group">
-                                <label>Username</label>
-                                <input type="text" name="username" id="username" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" name="password" id="password" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Confirm Password</label>
-                                <input type="password" name="confirmpassword" id="confirmpassword" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Date of Birth</label>
-                                <input type="date" name="dateofBirth" id="dateofBirth" max="1999-06-18" min="1949-06-18"
-                                    class="form-control" placeholder="mm/dd/yyyy">
-                            </div>
-                            <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" name="phone" id="phone" class="form-control"
-                                    placeholder="###-###-####">
-                            </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Phone</label>
+                                            <input type="text" name="phone" id="phone" class="form-control"
+                                                placeholder="###-###-####">
+                                        </div>
 
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" name="customerEmail" id="customerEmail" class="form-control"
-                                    placeholder="email@something.com">
-                            </div>
-                            <div class="form-group">
-                                <label>Address</label>
-                                <input type="text" name="address" id="address" class="form-control"
-                                    placeholder="123 address">
-                            </div>
-                            <div class="form-group">
-                                <label>Driver Licence</label>
-                                <input type="number" name="customerDriverLicence" id="customerDriverLicence"
-                                    class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label>Credit Card Number</label>
-                                <input type="number" name="creditCard" id="creditCard" class="form-control">
-                            </div>
-                            <button type="submit" name="createCustomer" class="btn btn-primary">Save</button>
-                            <button type="reset" class="btn btn-success">Reset Button</button>
+                                        <div class="form-group">
+                                            <label>Email</label>
+                                            <input type="email" name="customerEmail" id="customerEmail"
+                                                class="form-control" placeholder="email@something.com">
+                                        </div>
 
-                        </form>
+                                        <div class="form-group">
+                                            <label>Address</label>
+                                            <input type="text" name="address" id="address" class="form-control"
+                                                placeholder="123 address">
+                                        </div>
 
+                                        <div class="form-group">
+                                            <label>Driver Licence</label>
+                                            <input type="number" name="customerDriverLicence" id="customerDriverLicence"
+                                                class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Credit Card Number</label>
+                                            <input type="number" name="creditCard" id="creditCard" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="my-3">
+                                    <button type="submit" name="createCustomer" class="btn btn-primary">Create account</button>
+                                    <button type="reset" class="btn btn-danger">Reset fields</button>
+                                </div>
+
+                            </form>
+                        </div>
                     </div>
-
                 </div>
             </div>
-        </section>
-        <!-- /PAGE -->
-        <p class="text-center">
-            Already have an account?
-            <a href="login.php">
-                Login here!
-            </a>
-        </p>
-        <br>
-    </form>
-    <!-- Default form login -->
+        </div>
+    </div>
 </div>
-
-<!-- Functions & Plugins -->
+</body>
 <script>
 $(function() {
     $("#form_customer").submit(function(e) {
@@ -113,10 +109,7 @@ $(function() {
             address = $("input[name='address']"),
             customerDriverLicence = $("input[name='customerDriverLicence']"),
             creditCard = $("input[name='creditCard']");
-
-
         $(this).find(".error").remove();
-
 
         if (lastname.val().length < 1) {
             validated = false;
@@ -128,7 +121,6 @@ $(function() {
             lastname.css("border-color", "green");
             lastname.parent().find(".error").remove();
         }
-
 
         if (firstname.val().length < 1) {
             validated = false;
@@ -151,7 +143,6 @@ $(function() {
             username.css("border-color", "green");
             username.parent().find(".error").remove();
         }
-
 
         if (password.val().length < 5) {
             validated = false;
@@ -178,15 +169,13 @@ $(function() {
             validated = false;
             dateofBirth.css("border-color", "red");
             dateofBirth.parent().append(
-                "<span class='error'>Your date of birth cannot be empty or an invalid date.</span>");
+                "<span class='error'>Your date of birth cannot be empty or an invalid date.</span>"
+            );
             $(".error").fadeIn(500);
         } else {
             dateofBirth.css("border-color", "green");
             dateofBirth.parent().find(".error").remove();
         }
-
-
-
 
         if (phone.val().length < 4) {
             validated = false;
@@ -198,6 +187,16 @@ $(function() {
             phone.parent().find(".error").remove();
         }
 
+        if (customerEmail.val().length < 4) {
+            validated = false;
+            customerEmail.css("border-color", "red");
+            customerEmail.parent().append(
+                "<span class='error'> Please enter a valid email.</span>");
+            $(".error").fadeIn(500);
+        } else {
+            customerEmail.css("border-color", "green");
+            customerEmail.parent().find(".error").remove();
+        }
 
         if (address.val().length < 1) {
             validated = false;
@@ -208,6 +207,7 @@ $(function() {
             address.css("border-color", "green");
             address.parent().find(".error").remove();
         }
+
         if (customerDriverLicence.val().length < 4) {
             validated = false;
             customerDriverLicence.css("border-color", "red");
@@ -223,7 +223,7 @@ $(function() {
             validated = false;
             creditCard.css("border-color", "red");
             creditCard.parent().append(
-                "<span class='error'>Your creditCard cannot be empty or invalid number.</span>");
+                "<span class='error'>Your credit card cannot be empty or invalid number.</span>");
             $(".error").fadeIn(500);
         } else {
             creditCard.css("border-color", "green");
@@ -241,15 +241,9 @@ $(function() {
             msg += "Phone: " + phone.val() + "\n";
             msg += "CustomerDriverLicencess: " + customerDriverLicence.val() + "\n";
 
-
-
             var yess = confirm(msg);
             if (yess) {
-                /*    parent.$.colorbox.close();
-                 */
                 return true;
-                /*   closeWin();*/
-
             } else
                 return false;
         }
@@ -257,9 +251,6 @@ $(function() {
     })
 
     $("#form_customer").on('reset', function(e) {
-        /*location.reload();*/
-        /*                $(this).find(".error").remove();
-         */
         firstname = $("input[name='firstname']"),
             lastname = $("input[name='lastname']"),
             username = $("input[name='username']"),
@@ -271,12 +262,6 @@ $(function() {
             address = $("input[name='address']"),
             customerDriverLicence = $("input[name='customerDriverLicence']"),
             creditCard = $("input[name='creditCard']");
-
-
-
-
-
-
 
         lastname.css("border-color", "inherit");
         lastname.parent().find(".error").remove();
@@ -308,12 +293,8 @@ $(function() {
 
         creditCard.css("border-color", "inherit");
         creditCard.parent().find(".error").remove();
-
-
     });
 });
 </script>
-
-</body>
 
 </html>

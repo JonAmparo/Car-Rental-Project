@@ -6,16 +6,16 @@ if(!isset($_SESSION)){
 $user="";
 
 if (isset($_SESSION["logged"])){
-
 	$user=$_SESSION["logged"];
-
 }
 
 if(isset($_SESSION['error'] )) { ?>
 <script>
 alert("<?php echo  ($_SESSION['error'] )?>");
 </script>
+
 <?php unset($_SESSION['error']) ;} ?>
+
 <?php include('includes/head.php'); ?>
 <?php include('includes/header.php'); ?>
 

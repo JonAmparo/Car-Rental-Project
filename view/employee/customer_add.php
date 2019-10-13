@@ -45,8 +45,8 @@
 
                                         <div class="form-group">
                                             <label>Date of Birth</label>
-                                            <input type="date" name="dateofBirth" id="dateofBirth" max="1999-06-18"
-                                                min="1949-06-18" class="form-control" placeholder="mm/dd/yyyy">
+                                            <input type="date" name="dateofBirth" id="dateofBirth" max="1999-10-31"
+                                                min="1930-06-18" class="form-control" placeholder="mm/dd/yyyy">
                                         </div>
                                         <div class="form-group">
                                             <label>Phone</label>
@@ -293,4 +293,5 @@ $(function() {
     });
 });
 </script>
+
 </html>
