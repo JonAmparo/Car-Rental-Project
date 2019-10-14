@@ -373,7 +373,7 @@ class UserController {
 					"username"=>$username,
 					"password"=>md5($password),
 					"level"=>3,
-					"valid"=>0
+					"valid"=>1
 				);
 
 				$loginUser=new Login($login_array);
