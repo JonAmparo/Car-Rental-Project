@@ -9,11 +9,11 @@ include "Rental.class.php";
 include "ReturnRental.class.php";
 include "Dashboard.class.php";
 
-	$cleardb_url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-	$cleardb_server   = $cleardb_url["us-cdbr-iron-east-05.cleardb.net"];
-	$cleardb_username = $cleardb_url["baf1087e074d0c"];
-	$cleardb_password = $cleardb_url["5c2e7eb5"];
-	$cleardb_db = substr($cleardb_url["heroku_27fdf87e3d73367"],1);
+	$cleardb_url = parse_url(getenv('CLEARDB_DATABASE_URL'));
+	$cleardb_server   = $cleardb_url['us-cdbr-iron-east-05.cleardb.net'];
+	$cleardb_username = $cleardb_url['baf1087e074d0c'];
+	$cleardb_password = $cleardb_url['5c2e7eb5'];
+	$cleardb_db = substr($cleardb_url['heroku_27fdf87e3d73367'],1);
 
 	$active_group = 'default';
 	$query_builder = TRUE;
@@ -40,8 +40,6 @@ include "Dashboard.class.php";
 		'save_queries' => TRUE
 	);
 
-
-
 class DB_Manager {
 
 	// const HOST = "localhost";
@@ -58,9 +56,9 @@ class DB_Manager {
 
 	public function __construct()	{
 		try{
-			$this->db=new PDO("mysql:host=".self::HOST.";dbname=".self::DBNAME,self::USER, self:: PASS ); 	
+			$this->db=new PDO("mysql:host=".self::HOST.";dbname=".self::DBNAME,self::USER, self::PASS); 	
 			$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+			$this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false); 	
 
 		}catch(Exception $e){
 			die("Database connection error<br> " . $e->getMessage());
