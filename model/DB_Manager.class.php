@@ -51,16 +51,16 @@ class DB_Manager {
 
 	private $db;
 
-	public function __construct()	{
-		try{
-			$this->db=new PDO("mysql:host=".self::HOST.";dbname=".self::DBNAME,self::USER, self:: PASS ); 	
-			$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+	// public function __construct()	{
+	// 	try{
+	// 		$this->db=new PDO("mysql:host=".self::HOST.";dbname=".self::DBNAME,self::USER, self:: PASS ); 	
+	// 		$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	// 		$this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-		}catch(Exception $e){
-			die("Database connection error<br> " . $e->getMessage());
-		}
-	}
+	// 	}catch(Exception $e){
+	// 		die("Database connection error<br> " . $e->getMessage());
+	// 	}
+	// }
 
 	/*Employees*/
 
