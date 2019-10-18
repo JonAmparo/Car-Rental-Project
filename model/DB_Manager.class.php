@@ -66,7 +66,6 @@ class DB_Manager {
 	}
 
 	/*Employees*/
-
 	public function add_Employee($employee){
 		$query=$this->db->prepare("INSERT INTO employees VALUES (DEFAULT, ?,?,?,?,?,? );");
 		$query-> execute(array(
