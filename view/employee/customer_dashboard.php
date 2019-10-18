@@ -20,7 +20,6 @@
                             <a href="?controller=user&action=addNewCustomer" class="btn btn-success pull-right">Add
                                 Customer</a>
                         </div>
-
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
