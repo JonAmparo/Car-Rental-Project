@@ -49,18 +49,23 @@ class DB_Manager {
 	// const PASS = "";
 	// const DBNAME = "phpcarproject";
 
+	const HOST = "us-cdbr-iron-east-05.cleardb.net";
+	const USER = "baf1087e074d0c";
+	const PASS = "5c2e7eb5";
+	const DBNAME = "heroku_27fdf87e3d73367";
+
 	private $db;
 
-	// public function __construct()	{
-	// 	try{
-	// 		$this->db=new PDO("mysql:host=".self::HOST.";dbname=".self::DBNAME,self::USER, self:: PASS ); 	
-	// 		$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	// 		$this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+	public function __construct()	{
+		try{
+			$this->db=new PDO("mysql:host=".self::HOST.";dbname=".self::DBNAME,self::USER, self:: PASS ); 	
+			$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-	// 	}catch(Exception $e){
-	// 		die("Database connection error<br> " . $e->getMessage());
-	// 	}
-	// }
+		}catch(Exception $e){
+			die("Database connection error<br> " . $e->getMessage());
+		}
+	}
 
 	/*Employees*/
 
