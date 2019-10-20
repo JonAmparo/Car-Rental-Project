@@ -65,6 +65,7 @@ class UserController {
 	}
 
 	public function loginScreen(){
+		
 		require_once 'view/customers/login.php';
 		// header("Location: view/employee/index.php");
 	}
@@ -270,8 +271,12 @@ class UserController {
 	public function getAllEmplyees(){
 		$employees= $this->db->display_All_Employees();
 		require_once "view/employee/employee_dashboard.php";
-
 	}
+
+	// public function getAllEmplyeesLoginScreen(){
+	// 	$employees= $this->db->display_All_Employees();
+	// 	require_once "view/employee/employee_dashboard.php";
+	// }
 
 	public function addNewCustomer() {
 		// $cars=$this->db->display_All_Cars();
@@ -491,6 +496,8 @@ class UserController {
 	}
 
 	public function loginLogout(){
+		$employees= $this->db->display_All_Employees();
+		$customers = $this->db->display_All_Customers();
 		require_once "view/customers/login.php";
 	}
 
