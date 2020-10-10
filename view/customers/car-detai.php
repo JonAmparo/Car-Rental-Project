@@ -55,8 +55,8 @@ if (isset($_SESSION["logged"])){
 
                     <div class="form-group">
                         <label>Gas Consumption</label>
-                        <input type="number" name="gasConsumption" id="gasConsumption" class="form-control"
-                            value="<?=$carForDisplay->getGasConsumption()?>">
+                        <input type="number" name="gasConsumption" id="gasConsumption" readonly="readonly"
+                            class="form-control" value="<?=$carForDisplay->getGasConsumption()?>">
                     </div>
 
                     <div class="form-group">
@@ -102,16 +102,15 @@ if (isset($_SESSION["logged"])){
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <!-- <p class="btn-row text-center">
-                                <a href="#" class="btn btn-primary btn-icon-left facebook"><i
-                                        class="fa fa-facebook"></i>FACEBOOK</a>
-                                <a href="#" class="btn btn-primary btn-icon-left twitter"><i
-                                        class="fa fa-twitter"></i>TWITTER</a>
-                                <a href="#" class="btn btn-primary btn-icon-left pinterest"><i
-                                        class="fa fa-pinterest"></i>PINTEREST</a>
-                                <a href="#" class="btn btn-primary btn-icon-left google"><i
-                                        class="fa fa-google"></i>GOOGLE</a>
-                            </p> -->
+                    <p class="btn-row text-center">
+                        <a href="#" class="btn btn-primary btn-icon-left facebook"><i
+                                class="fa fa-facebook"></i>FACEBOOK</a>
+                        <a href="#" class="btn btn-primary btn-icon-left twitter"><i
+                                class="fa fa-twitter"></i>TWITTER</a>
+                        <a href="#" class="btn btn-primary btn-icon-left pinterest"><i
+                                class="fa fa-pinterest"></i>PINTEREST</a>
+                        <a href="#" class="btn btn-primary btn-icon-left google"><i class="fa fa-google"></i>GOOGLE</a>
+                    </p>
                 </div>
             </div>
         </div>

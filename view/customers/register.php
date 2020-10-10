@@ -81,7 +81,8 @@
                                     </div>
                                 </div>
                                 <div class="my-3">
-                                    <button type="submit" name="createCustomer" class="btn btn-primary">Create account</button>
+                                    <button type="submit" name="createCustomer" class="btn btn-primary">Create
+                                        account</button>
                                     <button type="reset" class="btn btn-danger">Reset fields</button>
                                 </div>
 

@@ -1,7 +1,41 @@
-<?php include('includes/head.php'); ?>
-<?php include('includes/header.php'); ?>
+<?php include('includes/head2.php'); ?>
+<?php include('includes/header2.php'); ?>
 
-<div class="container" style="background-color: white; margin-bottom: 100px;">
+<section class="banner">
+    <div class="content text-center">
+        <div class="contentBx">
+            <h3 class="text-center">CAR Rental
+                <span class="navy-blue"> FAQs</span>
+            </h3>
+        </div>
+
+        <!-- <div class="contentBx">
+            <h2>Custom <br />Rentals</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+                facere minima laboriosam accusantium voluptates vel quia aperiam
+                officia? Commodi praesentium culpa magni, sint ipsum sed.
+            </p>
+            <a href="#">Find a Rental</a>
+        </div>
+        <div class="imgBx">
+            <img src="view/customers/assets/images/carTrans.png" alt="car" />
+        </div>  -->
+    </div>
+    <!-- <ul class="sci">
+        <li>
+            <a href="#"><img src="view/customers/assets/icons/facebook.png" alt="facebook" /></a>
+        </li>
+        <li>
+            <a href=" #"><img src="view/customers/assets/icons/twitter.png" alt="twitter" /></a>
+        </li>
+        <li>
+            <a href="#"><img src="view/customers/assets/icons/instagram.png" alt="instagram" /></a>
+        </li>
+    </ul> -->
+</section>
+
+<!-- <div class="container" style="background-color: white; margin-bottom: 100px;">
     <br>
     <h1 class="text-center display-3 py-2">CAR Rental
         <span class="navy-blue"> FAQs</span>
@@ -28,7 +62,8 @@
                         <a href="#vehicles">Vehicles, Equipment and Protection Products</a><br />
                         <a href="#citations">Citations and Tolls</a><br />
                         <a href="#plus">MurdLo's Plus</a><br />
-                        <a adhocenable="false" href="#Exotics">Exotic Car Rental</a></p>
+                        <a adhocenable="false" href="#Exotics">Exotic Car Rental</a>
+                    </p>
                     <p> </p>
                     <p><a name="customer" id="customer"></a></p>
                 </section>
@@ -45,6 +80,6 @@
             <p class="m-0"><a name="general" id="general"></a></p>
         </div>
     </div>
-</div>
+</div> -->
 
-<?php include('includes/footer.php'); ?>
+<?php include('includes/footer2.php'); ?>
