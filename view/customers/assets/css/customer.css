@@ -78,6 +78,21 @@ a {
   text-align: center;
 }
 
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.flex-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -235,21 +250,29 @@ button:active {
           animation: slideStill 10s linear infinite;
 }
 
-.hero-container .hero-title {
+.hero-container .hero-cta {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20rem;
+}
+
+.hero-container .hero-cta .hero-title {
   font-size: 10rem;
   color: #fff;
   font-family: var(--font-anton);
   letter-spacing: 0.1rem;
 }
 
-.hero-container .hero-small {
+.hero-container .hero-cta .hero-small {
   color: #fff;
   font-weight: 400;
   font-size: 2.4rem;
   margin-top: 1.6rem;
 }
 
-.hero-container .hero-btn {
+.hero-container .hero-cta .hero-btn {
   margin-top: 2.6rem;
 }
 
@@ -295,21 +318,6 @@ button:active {
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
-}
-
-.w-100 {
-  width: 100%;
-}
-
-.h-100 {
-  height: 100%;
-}
-
-.flex-column {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 @media (min-width: 1200px) {

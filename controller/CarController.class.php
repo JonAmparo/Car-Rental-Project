@@ -146,8 +146,9 @@ class CarController {
 
 	public function carlisting() {
 		$cars=$this->db->display_All_Cars();
+		require_once "view/customers/index.php";
 
-		require_once "view/customers/cars.php";
+		// require_once "view/customers/cars.php";
 	}
 
 	

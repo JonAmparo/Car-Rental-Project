@@ -8,7 +8,7 @@
     <title>JonAmparo's Car Rental Service</title>
 
     <!-- Style Sheet -->
-    <link href="view/customers/assets/css/customer.css" rel="stylesheet">
+    <link href="view/customers/assets/css/customer.css?<?php echo time(); ?>" rel="stylesheet" type="text/css">
 
     <!-- icon -->
     <link rel="icon" type="image/png" href="view/customers/assets/images/icon.png">
