@@ -1,93 +1,103 @@
 /*
-* main application js
+* main application 
 * 
-* author: Jonathan <jonathanamparo2@live.com>
+* author: Jonathan <jonathanmamparo@gmail.com>
 * date: 4/17/2018
 * description: Company Web Re-design Project
 *
 */
 
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
 * {
-	font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
 }
 
 .navy-blue {
-	color: #29558b; /* Navy Blue */
+  color: #29558b; /* Navy Blue */
 }
 
 .bold-navy-blue {
-	color: #29558b; /* Navy blue*/
-    font-weight: 700;
-    text-decoration: underline;
+  color: #29558b; /* Navy blue*/
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .bold-navy-black {
-	color: black; /* Navy blue*/
-    font-weight: 600;
+  color: black; /* Navy blue*/
+  font-weight: 600;
 }
 
 .text-black {
-	color: black;
+  color: black;
 }
 
 .bg-navy-blue {
-	background-color: #29558b; /* Background Navy Blue */
+  background-color: #29558b; /* Background Navy Blue */
 }
 
 .bg-gray1 {
-	background-color: #f5f5f5; /* Background Gray */
+  background-color: #f5f5f5; /* Background Gray */
 }
 
 .nav-border-gray {
-	border-color: #8C8C8C; /*  Gray */
-	border: 1px solid;
-	border-top: 0!important;
-	border-right: 0!important;
-	border-left: 0!important;
+  border-color: #8c8c8c; /*  Gray */
+  border: 1px solid;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
 }
 
 #collapsibleNavbar a {
-	color: rgb(0, 0, 0); /* Black */
-    font-weight: 700;
+  color: rgb(0, 0, 0); /* Black */
+  font-weight: 700;
 }
 
 #collapsibleNavbar a:hover {
-	color: #29558b; /* Navy Blue */
-    font-weight: 700;
+  color: #29558b; /* Navy Blue */
+  font-weight: 700;
 }
 
 #collapsibleNavbar .nav-link.active {
-	color: #29558b; /* Navy Blue */
-    font-weight: 700;
+  color: #29558b; /* Navy Blue */
+  font-weight: 700;
 }
 
 #navTabs a {
-	color: rgb(0, 0, 0); /* black */
-    font-weight: 700;
+  color: rgb(0, 0, 0); /* black */
+  font-weight: 700;
 }
 
 #navTabs a:hover {
-	color: #29558b; /* Navy blue*/
-    font-weight: 700;
+  color: #29558b; /* Navy blue*/
+  font-weight: 700;
 }
 
 #navTabs .nav-link.active {
-	color: #29558b; /* Navy blue*/
-    font-weight: 700;
-}
-				
-.nav-tabs > li, .nav-pills > li {
-    float:none;
-    display:inline-block;
+  color: #29558b; /* Navy blue*/
+  font-weight: 700;
 }
 
-.nav-tabs, .nav-pills {
-    text-align:center;
+.nav-tabs > li,
+.nav-pills > li {
+  float: none;
+  display: inline-block;
 }
 
-#welcome a, #goal a, #history a{
-	color: rgb(0, 0, 0);
-    font-weight: 700;
+.nav-tabs,
+.nav-pills {
+  text-align: center;
+}
+
+#welcome a,
+#goal a,
+#history a {
+  color: rgb(0, 0, 0);
+  font-weight: 700;
 }
 
 .px-0 {
@@ -95,33 +105,74 @@
   padding-right: 0 !important;
 }
 
-#topFooter  {
-	background-color: #f5f5f5; /* Gray */
-	height: 115px;
+#topFooter {
+  background-color: #f5f5f5; /* Gray */
+  height: 115px;
 }
 
-footer p, footer span {
-	text-align: center;
-	font-size: 12px;
+footer p,
+footer span {
+  text-align: center;
+  font-size: 12px;
 }
 
 footer a {
-	color: #29558b; /* Navy blue*/
+  color: #29558b; /* Navy blue*/
 }
 
 footer a:hover {
-	color: #29558b; /* Navy blue*/
-	font-weight: 700;
+  color: #29558b; /* Navy blue*/
+  font-weight: 700;
 }
 
 a p:hover {
-	color: #29558b;
-	font-weight: 700;
+  color: #29558b;
+  font-weight: 700;
 }
 
 #map {
-      width: 400px;
-      height: 400px;
-    }
+  width: 400px;
+  height: 400px;
+}
 
 /* ---------------------------------TESTING WITH BELOW ------------------------------*/
+
+.section-home {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0062be;
+  transition: 0.5s;
+}
+
+.header-home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-home ul {
+  position: relative;
+  display: flex;
+}
+
+.header-home ul li {
+  list-style: none;
+}
+
+.header-home ul li a {
+  display: inline-block;
+  color: #fff;
+  font-weight: 400;
+  margin-left: 40px;
+  text-decoration: none;
+}
