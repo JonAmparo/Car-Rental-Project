@@ -3,6 +3,8 @@
 // var_dump($user); 
  ?>
 
+
+
 <section class="sliding-wrapper">
     <div class="sliding-hero">
         <div class="hero-container">
@@ -58,10 +60,21 @@
     </div>
 </section>
 
+
 <section class="video-cta">
-    <video class="video" playsinline autoplay muted loop poster="view/customers/assets/videos/video.mp4" id="bgvid">
+    <video playsinline autoplay muted loop poster="view/customers/assets/videos/video.mp4" id="bgvid">
+        <source src="view/customers/assets/videos/video.webm" type="video/webm">
         <source src="view/customers/assets/videos/video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+
     </video>
+    <div class="thing" id="polina">
+        <h1>Our Fleet, Your Fleet</h1>
+        <p>We know the difference is in the details and that’s why our exotic car rental services, in the tourism
+            and business industry, stand out for their quality and good taste, to offer you an unique experience</p>
+        <p>Call Now <a href="tel:#">(555) 555-5555</a></p>
+    </div>
+
 </section>
 
 
