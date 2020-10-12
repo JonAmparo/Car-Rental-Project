@@ -18,54 +18,51 @@
     </div>
 </section>
 
-<section>
-    <div class="container text-center">
-        <h2>First Class Exotic Car Rental In Quebec</h2>
-        <p>We offer exotic car rental & limousine services in our range of high-end vehicles</p>
-    </div>
-
+<section class="cars">
     <div class="container">
-        <?php foreach($cars as $key => $value) {
-		$car = new Car( $value); ?>
-        <?php if(($car->getStatus()==1) ){ ?>
-        <div class="thumbnail no-border no-padding thumbnail-car-card clearfix">
-            <div class="media">
-                <a class="media-link" data-gal="prettyPhoto" href="<?= $car->getImage() ?>">
-                    <img src="<?= $car->getImage() ?>" width="200" height="150" alt="car image" />
-                </a>
-            </div>
-            <div class="caption pt-3">
-                <h4 class="caption-title">
-                    <!-- <p class="text-primary"><?= $car->getBrand() ?></p> -->
-                    <a href="?controller=car&action=carDisplay&id=<?=$car->getCarID()?>"><?= $car->getBrand() ?></a>
-                </h4>
-                <h5 class="caption-title-sub">Price: <?= $car->getRentPrice()?>$ per a day</h5>
-                <div class="caption-text">Find the best car at minimum cost!</div>
-                <table class="table">
-                    <tr>
-                        <td>Type: <?= $car->getModel() ?></td>
-                        <td>Gas Consumption: <?= $car->getGasConsumption() ?></td>
-                        <td>Tank Capacity: <?= $car->getTankCapacity() ?></td>
-                        <td>Amount of passengers: <?= $car->getNumberofPassenger() ?></td>
-                        <?php if($user!=null || !empty($user)){ ?>
-                        <td class="buttons"><a class="btn btn-primary"
-                                href="?controller=rental&action=reservation&carId=<?=$car->getCarID()?>">Rent
-                                It</a></td>
-                        <?php }else{ ?>
-                        <td class="buttons"><a class="btn btn-primary" href="?controller=user&action=loginLogout">Rent
-                                It</a>
-                        </td>
-                        <?php } ?>
-                    </tr>
-                </table>
-            </div>
+        <div class="text-center pb-6 pt-2">
+            <h2>First Class Exotic Car Rental In Montréal.</h2>
+            <p>We offer exotic car rental & limousine services in our range of high-end vehicles</p>
         </div>
-        <?php  } ?>
-        <?php  } ?>
+
+        <div class="card-grid">
+            <?php foreach($cars as $key => $value) {
+		        $car = new Car( $value); ?>
+            <?php if(($car->getStatus()==1) ){ ?>
+            <a class="" href="?controller=car&action=carDisplay&id=<?=$car->getCarID()?>">
+                <div class="card" style="background-image: url(<?= $car->getImage() ?>)">
+                    <div class="card-info">
+                        <h1><?= $car->getBrand()?> <?= $car->getModel() ?></h1>
+                    </div>
+
+                    <div class="card-bottom-grid">
+                        <div class="passenger-grid a">
+                            <div><i class="fas fa-user-friends"></i></div>
+                            <div><?= $car->getNumberofPassenger() ?></div>
+                        </div>
+                        <div class="info-grid b">
+                            <div><i class="fas fa-gas-pump"></i></div>
+                            <div><?= $car->getGasConsumption() ?></div>
+                        </div>
+                        <div class="price-grid c ">
+                            <h2>$<?= $car->getRentPrice()?></h2>
+                            <p class="small per-day">per day</p>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+            <?php  } ?>
+            <?php  } ?>
+        </div>
     </div>
 </section>
 
+<section class="video-cta">
+    <video class="video" playsinline autoplay muted loop poster="view/customers/assets/videos/video.mp4" id="bgvid">
+        <source src="view/customers/assets/videos/video.mp4" type="video/mp4">
+    </video>
+</section>
 
 
-
-<!-- <?php include('includes/footer2.php'); ?> -->
+<?php include('includes/footer2.php'); ?>
