@@ -59,7 +59,9 @@ class IndexController {
 		require_once "view/customers/faq.php";
 	}
 
-	public function home(){
+	public function home() {
+		$cars=$this->db->display_All_Cars();
+
 		require_once "view/customers/index.php";
 	}
 

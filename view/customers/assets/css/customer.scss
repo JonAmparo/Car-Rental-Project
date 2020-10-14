@@ -33,6 +33,14 @@ body {
   font-size: 1.6rem;
 }
 
+h2 {
+  font-size: 3.8rem;
+}
+
+.small {
+  font-size: 1rem;
+}
+
 ol,
 ul {
   list-style: none;
@@ -68,8 +76,28 @@ a {
   padding-top: 0;
 }
 
+.pt-2 {
+  padding-top: 2rem;
+}
+
+.pb-6 {
+  padding-bottom: 6rem;
+}
+
 .text-center {
   text-align: center;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.flex-column {
+  flex-direction: column;
 }
 
 header {
@@ -197,40 +225,6 @@ button:active {
   transform: scale(0.99);
 }
 
-// .btn {
-//   display: inline-block;
-//   background-color: var(--orange);
-//   color: white;
-//   padding: 10px 30px;
-//   text-transform: uppercase;
-//   text-decoration: none;
-//   transition: 0.5s;
-//   border-radius: 2px;
-//   font-weight: 600;
-//   cursor: pointer;
-//   border-width: 1px;
-//   border-color: red;
-//   padding: 2rem 4rem;
-//   font-size: 1.7rem;
-
-//   &:hover {
-//     // letter-spacing: 2px;
-//     background-color: #1f1f1f;
-//     border-color: #1f1f1f;
-//     color: white;
-//   }
-// }
-
-// .hero {
-//   margin-top: 0rem;
-//   min-height: 100vh;
-//   position: relative;
-//   background-image: url(../images/car20.jpg);
-//   background-size: cover;
-//   background-position: center center;
-//   background-repeat: no-repeat;
-// }
-
 .sliding-wrapper {
   overflow: hidden;
   height: 100vh;
@@ -260,28 +254,34 @@ button:active {
     background-size: 100% 100%;
   }
 }
+
 .hero-container {
   width: 90.91%;
   height: 75vh;
   position: absolute;
   animation: slideStill 10s linear infinite;
 
-  .hero-title {
-    font-size: 10rem;
-    color: #fff;
-    font-family: var(--font-anton);
-    letter-spacing: 0.1rem;
-  }
+  .hero-cta {
+    flex-direction: column;
+    margin-top: 20rem;
 
-  .hero-small {
-    color: #fff;
-    font-weight: 400;
-    font-size: 2.4rem;
-    margin-top: 1.6rem;
-  }
+    .hero-title {
+      font-size: 10rem;
+      color: #fff;
+      font-family: var(--font-anton);
+      letter-spacing: 0.1rem;
+    }
 
-  .hero-btn {
-    margin-top: 2.6rem;
+    .hero-small {
+      color: #fff;
+      font-weight: 400;
+      font-size: 2.4rem;
+      margin-top: 1.6rem;
+    }
+
+    .hero-btn {
+      margin-top: 2.6rem;
+    }
   }
 }
 
@@ -303,16 +303,177 @@ button:active {
   }
 }
 
-.w-100 {
+// Cars Card
+
+.cars {
+  padding: 3rem 0;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: row;
+  grid-row-gap: 1.6rem;
+  grid-column-gap: 1.6rem;
+}
+
+.card {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 30rem;
   width: 100%;
+  color: #fff;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+    transform: translateY(-0.4rem);
+    box-shadow: 0 22px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
+    background-color: #343a40;
+    background-size: 100% 100%;
+  }
+
+  .card-info {
+    padding: 1rem 2rem;
+  }
+
+  .card-bottom-info {
+    padding: 1rem 2rem;
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    .info {
+      width: 100%;
+    }
+
+    .price {
+      width: 100%;
+      text-align: right;
+      float: right;
+    }
+  }
+
+  .card-bottom-grid {
+    display: grid;
+    grid-template-areas: 'a b c';
+    grid-template-columns: 2rem 2rem 1fr;
+    grid-template-rows: 5rem;
+    grid-auto-flow: row;
+    grid-column-gap: 1.6rem;
+    grid-row-gap: 1.6rem;
+
+    padding: 1rem 2rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    .passenger-grid {
+      grid-area: a;
+    }
+
+    .info-grid {
+      grid-area: b;
+      // width: 100%;
+    }
+
+    .price-grid {
+      grid-area: c;
+      text-align: right;
+
+      .per-day {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+      }
+    }
+  }
 }
 
-.h-100 {
-  height: 100%;
+.video-cta {
+  position: relative;
+  margin-top: 5rem;
+  background: var(--color-dark);
+
+  video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transition: 1s opacity;
+  }
+
+  .thing {
+    position: absolute;
+    top: 40%;
+    left: 33%;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
+    margin: 2rem;
+    width: 33%;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 100;
+  }
 }
 
-.flex-column {
-  flex-direction: column;
+.footer {
+  padding: 4rem 0;
+  background-color: var(--color-dark);
+  color: #fff;
+
+  .footer-hr {
+    border-bottom: 1px solid gray;
+  }
+
+  .footer-bar {
+    display: flex;
+    padding-top: 3rem;
+
+    &:before {
+      border-bottom: 1px solid gray;
+    }
+
+    .copyright {
+      width: 100%;
+    }
+
+    .bar-menu {
+      justify-content: end;
+
+      .footer-menu {
+        width: 100%;
+        display: flex;
+        // text-align: right;
+
+        li {
+          padding-left: 1rem;
+          // margin: 1rem;
+
+          a {
+            padding: 1rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Media Queries
@@ -323,5 +484,17 @@ button:active {
     box-sizing: border-box;
     margin: auto;
     padding: 0 90px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -8,13 +8,12 @@
     <title>JonAmparo's Car Rental Service</title>
 
     <!-- Style Sheet -->
-    <link href="view/customers/assets/css/customer.css" rel="stylesheet">
+    <link href="view/customers/assets/css/customer.css?<?php echo time(); ?>" rel="stylesheet" type="text/css">
 
     <!-- icon -->
     <link rel="icon" type="image/png" href="view/customers/assets/images/icon.png">
 
     <!-- Font Awesome  -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
-        integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous">
-    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>

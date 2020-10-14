@@ -1,18 +1,21 @@
+<footer class="footer">
+    <div class="container">
+        <!-- <div class="footer-hr"></div> -->
+        <div class="footer-bar">
+            <div class="copyright">&copy; Copyright MTL Exotic Rentals</div>
+            <div class="bar-menu">
+                <ul class="footer-menu">
+                    <li><a href="#">Rentals</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
 <script type="text/javascript">
-function toggle() {
-    const toggle = document.querySelector('.toggle');
-    const menu = document.querySelector('.menu');
-    const banner = document.querySelector('.banner');
-    const logo = document.querySelector('.logo');
-    const content = document.querySelector('.content');
-
-
-    toggle.classList.toggle('active');
-    menu.classList.toggle('active');
-    banner.classList.toggle('active');
-    logo.classList.toggle('active');
-    content.classList.toggle('active');
-}
 </script>
 
 </body>
