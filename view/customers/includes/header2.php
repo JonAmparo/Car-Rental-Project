@@ -23,12 +23,12 @@ alert("<?php echo  ($_SESSION['error'] )?>");
                     <div class="top-contact-info">
                         <div class="top-contact-number">
                             <a href="tel:(555) 555-5555">
-                                <i class="fas fa-phone"></i>
+                                <i class="fas fa-phone sticky-icons"></i>
                                 (555) 555-5555
                             </a>
                         </div>
                         <div class="top-contact-hours">
-                            <i class="fas fa-clock"></i>
+                            <i class="fas fa-clock sticky-icons"></i>
                             Mon-Sun 9 am - 8 pm
                         </div>
                     </div>

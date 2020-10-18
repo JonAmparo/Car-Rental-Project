@@ -130,7 +130,7 @@ header {
 
 header .contact-bar {
   width: 100%;
-  background-color: blue;
+  background-color: var(--color-dark);
   padding: 0.5rem 0;
 }
 
@@ -147,6 +147,10 @@ header .contact-bar .top-contact-info {
 
 header .contact-bar .top-contact-info .top-contact-hours {
   padding-left: 1.5rem;
+}
+
+header .contact-bar .top-contact-info .sticky-icons {
+  margin-right: 0.35rem;
 }
 
 header .contact-bar .top-social-media {
