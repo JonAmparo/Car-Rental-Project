@@ -20,9 +20,9 @@
     </div>
 </section>
 
-<section class="cars">
+<section class="section-padding">
     <div class="container">
-        <div class="text-center pb-6 pt-2">
+        <div class="text-center pb-6">
             <h2>First Class Exotic Car Rental In Montréal.</h2>
             <p>We offer exotic car rental & limousine services in our range of high-end vehicles</p>
         </div>

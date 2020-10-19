@@ -5,7 +5,7 @@
     <a class="" href="?controller=car&action=carDisplay&id=<?=$car->getCarID()?>">
         <div class="card" style="background-image: url(<?= $car->getImage() ?>)">
             <div class="card-info">
-                <h1><?= $car->getBrand()?> <?= $car->getModel() ?></h1>
+                <h5><?= $car->getBrand()?> <?= $car->getModel() ?></h5>
             </div>
 
             <div class="card-bottom-grid">

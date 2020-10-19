@@ -1,26 +1,15 @@
-<?php include('includes/head.php'); ?>
 <?php include('includes/head2.php'); ?>
-<?php include('includes/header.php'); ?>
+<?php include('includes/header2.php'); ?>
 
-<div class="py-5">
+<section class="section-top">
     <div class="container">
-        <h1 class="text-center navy-blue">
-            <span class="text-black">OUR </span>
+        <h1 class="text-center pb-6">
+            <span class="">OUR </span>
             CARS
         </h1>
-        <div class="row">
-            <div class="tab-content">
-                <div id="procedure" class="container tab-pane active">
-                    <h3>AVAILABLE <span class="navy-blue">CARS FOR RENT</span></h3>
-                    <p><i>TO MURDLO'S RENTALS<span class="navy-blue"> CARS AVAILABLE FOR RENT</span></i></p>
 
-                    <div class="container h-100" id="Luxury">
-                        <?php include('includes/cars.php');?>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php include('includes/cars.php');?>
     </div>
-</div>
+</section>
 
-<?php include('includes/footer.php'); ?>
+<?php include('includes/footer2.php'); ?>

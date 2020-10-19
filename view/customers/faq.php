@@ -1,85 +1,46 @@
 <?php include('includes/head2.php'); ?>
 <?php include('includes/header2.php'); ?>
 
-<section class="banner">
-    <div class="content text-center">
-        <div class="contentBx">
-            <h3 class="text-center">CAR Rental
-                <span class="navy-blue"> FAQs</span>
-            </h3>
-        </div>
-
-        <!-- <div class="contentBx">
-            <h2>Custom <br />Rentals</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-                facere minima laboriosam accusantium voluptates vel quia aperiam
-                officia? Commodi praesentium culpa magni, sint ipsum sed.
-            </p>
-            <a href="#">Find a Rental</a>
-        </div>
-        <div class="imgBx">
-            <img src="view/customers/assets/images/carTrans.png" alt="car" />
-        </div>  -->
-    </div>
-    <!-- <ul class="sci">
-        <li>
-            <a href="#"><img src="view/customers/assets/icons/facebook.png" alt="facebook" /></a>
-        </li>
-        <li>
-            <a href=" #"><img src="view/customers/assets/icons/twitter.png" alt="twitter" /></a>
-        </li>
-        <li>
-            <a href="#"><img src="view/customers/assets/icons/instagram.png" alt="instagram" /></a>
-        </li>
-    </ul> -->
-</section>
-
-<!-- <div class="container" style="background-color: white; margin-bottom: 100px;">
-    <br>
-    <h1 class="text-center display-3 py-2">CAR Rental
-        <span class="navy-blue"> FAQs</span>
-    </h1>
-    <hr>
-
-    <div class="row justify-content-center">
-        <div class="col-8">
-            <p class="lead text-center">Have a question about car rental? Browse the topics below or click on one of the
+<section class="section-top">
+    <div class="container">
+        <div class="pb-6">
+            <h1 class="text-center">CAR Rental
+                <span class=""> FAQs</span>
+            </h1>
+            <p class="text-center">Have a question about car rental? Browse the topics below or click on one of
+                the
                 questions to
                 find an answer and get on the road!
             </p>
         </div>
-    </div>
-    <div class="row py-3">
-        <div class="tab-content col-md-6">
-            <div class="simpletextband section">
-                <section class="band">
-                    <h2>Topics</h2>
-                    <p><a href="#customer">Customer Service</a><br />
-                        <a href="#general">General Car Rental Questions</a><br />
-                        <a href="#discounts">Discounts and Promotions</a><br />
-                        <a href="#mileage">Mileage and Authorized Driving Areas</a><br />
-                        <a href="#vehicles">Vehicles, Equipment and Protection Products</a><br />
-                        <a href="#citations">Citations and Tolls</a><br />
-                        <a href="#plus">MurdLo's Plus</a><br />
-                        <a adhocenable="false" href="#Exotics">Exotic Car Rental</a>
-                    </p>
-                    <p> </p>
-                    <p><a name="customer" id="customer"></a></p>
-                </section>
+
+        <div class="faq-grid">
+            <div class="topics">
+                <h2>Topics</h2>
+                <a class="link" href="#customer">Customer Service</a><br />
+                <a class="link" href="#general">General Car Rental Questions</a><br />
+                <a class="link" href="#discounts">Discounts and Promotions</a><br />
+                <a class="link" href="#mileage">Mileage and Authorized Driving Areas</a><br />
+                <a class="link" href="#vehicles">Vehicles, Equipment and Protection Products</a><br />
+                <a class="link" href="#citations">Citations and Tolls</a><br />
+                <a class="link" href="#plus">MurdLo's Plus</a><br />
+                <a class="link" href="#Exotics">Exotic Car Rental</a>
+            </div>
+
+            <div class="customer-service">
+                <h2>Customer Service</h2>
+                <a class="link" href="#lost-and-found">Lost and Found</a><br />
+
+                <a class="link" href="#car-rental-receipt-invoice">How can I get
+                    a
+                    copy of my receipt?</a><br />
+                <a class="link" href="#car-rental-deposit-refunds">How do
+                    refunds
+                    work with the different methods of payment?</a><br />
             </div>
         </div>
-        <div class="col-md-6">
-            <h2>Customer Service</h2>
-            <p class="m-0"><a adhocenable="false" href="/en/help/faqs/lost-and-found.html">Lost and Found</a>
-            </p>
-            <p class="m-0"><a adhocenable="false" href="/en/help/faqs/car-rental-receipt-invoice.html">How can I get a
-                    copy of my receipt?</a></p>
-            <p class="m-0"><a adhocenable="false" href="/en/help/faqs/car-rental-deposit-refunds.html">How do refunds
-                    work with the different methods of payment?</a></p>
-            <p class="m-0"><a name="general" id="general"></a></p>
-        </div>
+
     </div>
-</div> -->
+</section>
 
 <?php include('includes/footer2.php'); ?>

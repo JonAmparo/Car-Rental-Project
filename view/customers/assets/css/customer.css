@@ -30,10 +30,27 @@ html {
 body {
   text-rendering: optimizeLegibility;
   font-size: 1.6rem;
+  color: var(--color-dark);
+}
+
+h1 {
+  font-size: 4rem;
 }
 
 h2 {
   font-size: 3.8rem;
+}
+
+h4 {
+  font-size: 3.2rem;
+}
+
+h5 {
+  font-size: 2.6rem;
+}
+
+h6 {
+  font-size: 1.6rem;
 }
 
 .small {
@@ -48,6 +65,15 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.link {
+  color: var(--color-blue);
+}
+
+.link:hover {
+  color: var(--color-dark);
+  text-decoration: underline;
 }
 
 .container {
@@ -188,7 +214,7 @@ header .nav-bar .nav-links .nav-item .nav-link {
 }
 
 header .nav-bar .nav-links .nav-item .nav-link:hover {
-  background-color: pink;
+  background-color: var(--color-blue);
 }
 
 .facebook:hover {
@@ -275,7 +301,7 @@ button:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 20rem;
+  margin-top: 32rem;
 }
 
 .hero-container .hero-cta .hero-title {
@@ -340,8 +366,13 @@ button:active {
   }
 }
 
-.cars {
-  padding: 3rem 0;
+.section-top {
+  padding-top: 14.3rem;
+  padding-bottom: 7rem;
+}
+
+.section-padding {
+  padding: 7rem 0;
 }
 
 .card-grid {
@@ -459,7 +490,6 @@ button:active {
 
 .video-cta {
   position: relative;
-  margin-top: 5rem;
   background: var(--color-dark);
 }
 
@@ -531,6 +561,18 @@ button:active {
   padding: 1rem;
 }
 
+.faq-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: (auto)[2];
+      grid-template-rows: repeat(2, auto);
+  grid-auto-flow: row;
+  grid-row-gap: 1.6rem;
+  grid-column-gap: 1.6rem;
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1425px;
@@ -551,6 +593,10 @@ button:active {
 
 @media (max-width: 768px) {
   .card-grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .faq-grid {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
