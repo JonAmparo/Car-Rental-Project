@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="container">
-        <!-- <div class="footer-hr"></div> -->
+        <div class="footer-hr"></div>
         <div class="footer-bar">
             <div class="copyright">&copy; Copyright MTL Exotic Rentals</div>
             <div class="bar-menu">

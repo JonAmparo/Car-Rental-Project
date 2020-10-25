@@ -31,10 +31,27 @@ html {
 body {
   text-rendering: optimizeLegibility;
   font-size: 1.6rem;
+  color: var(--color-dark);
+}
+
+h1 {
+  font-size: 4rem;
 }
 
 h2 {
   font-size: 3.8rem;
+}
+
+h4 {
+  font-size: 3.2rem;
+}
+
+h5 {
+  font-size: 2.6rem;
+}
+
+h6 {
+  font-size: 1.6rem;
 }
 
 .small {
@@ -49,6 +66,15 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.link {
+  color: var(--color-blue);
+
+  &:hover {
+    color: var(--color-dark);
+    text-decoration: underline;
+  }
 }
 
 .container {
@@ -114,7 +140,7 @@ header {
 
   .contact-bar {
     width: 100%;
-    background-color: blue;
+    background-color: var(--color-dark);
     padding: 0.5rem 0;
 
     svg {
@@ -124,11 +150,12 @@ header {
       display: flex;
       font-size: 1.3rem;
 
-      .top-contact-number {
-      }
-
       .top-contact-hours {
         padding-left: 1.5rem;
+      }
+
+      .sticky-icons {
+        margin-right: 0.35rem;
       }
     }
 
@@ -164,7 +191,7 @@ header {
           padding: 1.8rem 2rem;
 
           &:hover {
-            background-color: pink;
+            background-color: var(--color-blue);
           }
         }
       }
@@ -263,7 +290,7 @@ button:active {
 
   .hero-cta {
     flex-direction: column;
-    margin-top: 20rem;
+    margin-top: 32rem;
 
     .hero-title {
       font-size: 10rem;
@@ -303,11 +330,18 @@ button:active {
   }
 }
 
-// Cars Card
+// Global
 
-.cars {
-  padding: 3rem 0;
+.section-top {
+  padding-top: 14.3rem;
+  padding-bottom: 7rem;
 }
+
+.section-padding {
+  padding: 7rem 0;
+}
+
+// Cars Card
 
 .card-grid {
   display: grid;
@@ -409,7 +443,7 @@ button:active {
 
 .video-cta {
   position: relative;
-  margin-top: 5rem;
+  // margin-top: 5rem;
   background: var(--color-dark);
 
   video {
@@ -476,6 +510,17 @@ button:active {
   }
 }
 
+// FAQs page
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: row;
+  grid-row-gap: 1.6rem;
+  grid-column-gap: 1.6rem;
+}
+
 // Media Queries
 @media (min-width: 1200px) {
   .container {
@@ -495,6 +540,10 @@ button:active {
 
 @media (max-width: 768px) {
   .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-grid {
     grid-template-columns: 1fr;
   }
 }
